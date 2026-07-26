@@ -496,7 +496,7 @@ function countUp(id,target){
 }
 var counted=false;
 var heroObs=new IntersectionObserver(function(e){
-  if(e[0].isIntersecting&&!counted){counted=true;countUp('c1',6);countUp('c2',300);countUp('c3',5);}
+  if(e[0].isIntersecting&&!counted){counted=true;countUp('c1',7);countUp('c2',300);countUp('c3',5);}
 },{threshold:0.3});
 heroObs.observe(document.querySelector('.hero-stats'));
 
