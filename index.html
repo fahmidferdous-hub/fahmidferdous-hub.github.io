@@ -201,6 +201,26 @@ footer strong{color:rgba(255,255,255,.6)}
   .photo-ring-wrap{width:240px;height:240px}
   .badge-top,.badge-bottom{display:none}
 }
+
+/* ─── CLIENTS ─── */
+.clients-section{background:#fff;overflow:hidden;padding:6rem 0}
+.clients-section .section-inner{padding:0 5vw;max-width:1300px;margin:0 auto;text-align:center}
+.clients-label{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;display:flex;align-items:center;justify-content:center;gap:.6rem}
+.clients-label::before,.clients-label::after{content:'';width:20px;height:2px;background:var(--gold)}
+.clients-h{font-family:'Syne',sans-serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;color:var(--ink);line-height:1.15;margin-bottom:.8rem}
+.clients-sub{font-size:.95rem;color:var(--muted);max-width:520px;margin:0 auto 3.5rem;line-height:1.7}
+.logo-track-outer{position:relative;overflow:hidden;padding:.5rem 0}
+.logo-track-outer::before,.logo-track-outer::after{content:'';position:absolute;top:0;bottom:0;width:180px;z-index:2;pointer-events:none}
+.logo-track-outer::before{left:0;background:linear-gradient(to right,#fff 0%,transparent 100%)}
+.logo-track-outer::after{right:0;background:linear-gradient(to left,#fff 0%,transparent 100%)}
+.logo-track{display:flex;align-items:center;gap:0;white-space:nowrap;animation:logo-scroll 35s linear infinite}
+.logo-track:hover{animation-play-state:paused}
+@keyframes logo-scroll{to{transform:translateX(-50%)}}
+.logo-item{display:inline-flex;align-items:center;justify-content:center;height:90px;width:180px;flex-shrink:0;padding:0 20px}
+.logo-item img{max-height:65px;max-width:140px;width:auto;height:auto;object-fit:contain;filter:grayscale(100%) opacity(0.45);transition:filter .35s,transform .35s}
+.logo-item img:hover{filter:grayscale(0%) opacity(1);transform:scale(1.08)}
+.clients-more{margin-top:2.5rem;font-size:.85rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:.8rem}
+.clients-more::before,.clients-more::after{content:'';width:40px;height:1px;background:var(--border-l)}
 </style>
 </head>
 <body>
@@ -211,7 +231,7 @@ footer strong{color:rgba(255,255,255,.6)}
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#certifications">Credentials</a></li>
+    <li><a href="#clients">Clients</a></li><li><a href="#certifications">Credentials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Hire Me</a>
@@ -316,6 +336,50 @@ footer strong{color:rgba(255,255,255,.6)}
       </div>
     </div>
   </div>
+</section>
+
+
+<!-- CLIENTS -->
+<section class="clients-section" id="clients">
+  <div class="section-inner reveal">
+    <div class="clients-label">Trusted By</div>
+    <h2 class="clients-h">Clients &amp; Partners</h2>
+    <p class="clients-sub">A selection of organisations I&rsquo;ve had the privilege of working with across energy, FMCG, education, legal, and technology sectors &mdash; and many more.</p>
+  </div>
+  <div class="logo-track-outer">
+    <div class="logo-track">
+      <span class="logo-item"><img src="logos/lg-electronics.png" alt="LG Electronics" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/dpdc.png" alt="DPDC" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/cuet.png" alt="CUET" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/greenbud.png" alt="Greenbud" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/nikimt.png" alt="Nikimt JSC · Rosatom" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/ijm.png" alt="IJM" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/akij-insaf.png" alt="Akij Insaf" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/akij-bakers.png" alt="Akij Bakers" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/swapno.jpg" alt="Swapno" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/omc.jpg" alt="OMC" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/pie.png" alt="PIE Education" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/remarks.jpg" alt="Remark" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/golden-touch.png" alt="Golden Touch" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/as-associates.png" alt="A.S & Associates" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/lg-electronics.png" alt="LG Electronics" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/dpdc.png" alt="DPDC" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/cuet.png" alt="CUET" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/greenbud.png" alt="Greenbud" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/nikimt.png" alt="Nikimt JSC · Rosatom" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/ijm.png" alt="IJM" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/akij-insaf.png" alt="Akij Insaf" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/akij-bakers.png" alt="Akij Bakers" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/swapno.jpg" alt="Swapno" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/omc.jpg" alt="OMC" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/pie.png" alt="PIE Education" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/remarks.jpg" alt="Remark" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/golden-touch.png" alt="Golden Touch" loading="lazy"/></span>
+      <span class="logo-item"><img src="logos/as-associates.png" alt="A.S & Associates" loading="lazy"/></span>
+      
+    </div>
+  </div>
+  <div class="clients-more reveal">&amp; many more across fintech, RMG, healthcare, manufacturing &amp; NGO sectors</div>
 </section>
 
 <!-- EXPERIENCE -->
