@@ -381,16 +381,20 @@ footer a{color:var(--gold);text-decoration:none}
       </div>
     </div>
     <div class="reveal">
-      <div class="contact-form">
+      <form id="cform" class="contact-form">
+        <input type="hidden" name="access_key" value="4d1b865e-3349-44dc-9d4e-e6e64d1082da"/>
+        <input type="hidden" name="subject" value="New portfolio enquiry — fahmidferdous.github.io"/>
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1"/>
         <h3>Send a message</h3>
         <div class="form-row">
-          <div class="fgroup"><label>Your Name</label><input type="text" placeholder="Jane Smith"/></div>
-          <div class="fgroup"><label>Company</label><input type="text" placeholder="Acme Corp"/></div>
+          <div class="fgroup"><label>Your Name</label><input type="text" name="name" placeholder="Jane Smith" required/></div>
+          <div class="fgroup"><label>Company</label><input type="text" name="company" placeholder="Acme Corp"/></div>
         </div>
-        <div class="fgroup"><label>Email</label><input type="email" placeholder="jane@company.com"/></div>
-        <div class="fgroup"><label>Message</label><textarea placeholder="Tell me about your project or opportunity..."></textarea></div>
-        <button class="btn btn-gold" style="width:100%;justify-content:center" onclick="this.textContent='Message Sent ✓';this.style.background='#4e6b52';this.disabled=true">Send Message &#8594;</button>
-      </div>
+        <div class="fgroup"><label>Email</label><input type="email" name="email" placeholder="jane@company.com" required/></div>
+        <div class="fgroup"><label>Message</label><textarea name="message" placeholder="Tell me about your project or opportunity..." required></textarea></div>
+        <button type="submit" id="csubmit" class="btn btn-gold" style="width:100%;justify-content:center">Send Message &#8594;</button>
+        <div id="cresult" style="display:none;margin-top:1rem;padding:.8rem 1rem;border-radius:9px;font-size:.85rem;text-align:center;font-weight:500"></div>
+      </form>
     </div>
   </div>
 </section>
@@ -404,6 +408,32 @@ var io=new IntersectionObserver(function(entries){
   entries.forEach(function(e,i){if(e.isIntersecting)setTimeout(function(){e.target.classList.add('vis')},i*70)});
 },{threshold:0.08});
 document.querySelectorAll('.reveal,.exp-item').forEach(function(el){io.observe(el)});
+</script>
+
+<script>
+document.getElementById('cform').addEventListener('submit',async function(e){
+  e.preventDefault();
+  var btn=document.getElementById('csubmit');
+  var res=document.getElementById('cresult');
+  btn.textContent='Sending…';
+  btn.disabled=true;
+  try{
+    var r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(this)});
+    var d=await r.json();
+    if(d.success){
+      res.style.cssText='display:block;margin-top:1rem;padding:.8rem 1rem;border-radius:9px;font-size:.85rem;text-align:center;font-weight:500;background:rgba(78,107,82,.1);color:#4e6b52';
+      res.textContent='✓ Message sent! Fahmid will get back to you soon.';
+      btn.textContent='Message Sent ✓';
+      btn.style.background='#4e6b52';
+      this.reset();
+    }else{throw new Error();}
+  }catch(err){
+    res.style.cssText='display:block;margin-top:1rem;padding:.8rem 1rem;border-radius:9px;font-size:.85rem;text-align:center;font-weight:500;background:rgba(196,98,45,.08);color:#b87d2e';
+    res.textContent='Something went wrong — email directly at fahmidferdous@gmail.com';
+    btn.textContent='Send Message →';
+    btn.disabled=false;
+  }
+});
 </script>
 </body>
 </html>
