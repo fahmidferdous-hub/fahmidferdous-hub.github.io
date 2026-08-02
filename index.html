@@ -380,6 +380,34 @@ footer strong{color:rgba(255,255,255,.6)}
 .story-tags{display:flex;flex-wrap:wrap;gap:.4rem;padding:1.2rem 1.8rem;border-top:1px solid var(--border-d)}
 .story-tag{font-size:.65rem;padding:.2rem .65rem;border-radius:100px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.45);border:1px solid var(--border-d)}
 @media(max-width:900px){.stories-grid{grid-template-columns:1fr}}
+
+/* ─── THOUGHT LEADERSHIP ─── */
+.tl-section{background:#fff;padding:6rem 5vw}
+.tl-section .si{max-width:1300px;margin:0 auto}
+.tl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-top:3rem}
+.tl-card{background:var(--light);border:1px solid var(--border-l);border-radius:20px;overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;display:flex;flex-direction:column}
+.tl-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,.1);border-color:rgba(200,144,42,.35)}
+.tl-card-top{padding:1.6rem 1.8rem 1.2rem;flex:1}
+.tl-source{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0a66c2;background:rgba(10,102,194,.08);border:1px solid rgba(10,102,194,.15);border-radius:100px;padding:.28rem .8rem;margin-bottom:1rem}
+.tl-source svg{width:12px;height:12px;fill:#0a66c2}
+.tl-tag{display:inline-block;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:var(--gold-pale);border:1px solid rgba(200,144,42,.2);border-radius:100px;padding:.22rem .7rem;margin-bottom:.9rem;margin-left:.5rem}
+.tl-title{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;color:var(--ink);line-height:1.35;margin-bottom:.9rem}
+.tl-excerpt{font-size:.85rem;color:var(--muted);line-height:1.75}
+.tl-card-bottom{padding:1.1rem 1.8rem;border-top:1px solid var(--border-l);display:flex;align-items:center;justify-content:space-between}
+.tl-meta{font-size:.72rem;color:var(--muted)}
+.tl-read{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:600;color:var(--gold);text-decoration:none;transition:gap .2s}
+.tl-read:hover{gap:.7rem}
+.tl-read svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2}
+.tl-more{margin-top:2.5rem;text-align:center}
+.tl-more a{display:inline-flex;align-items:center;gap:.6rem;font-size:.85rem;font-weight:600;color:#0a66c2;text-decoration:none;padding:.75rem 1.8rem;border:1.5px solid rgba(10,102,194,.25);border-radius:100px;transition:background .2s,border-color .2s}
+.tl-more a:hover{background:rgba(10,102,194,.06);border-color:rgba(10,102,194,.45)}
+@media(max-width:640px){
+  .tl-section{padding:3.5rem 1.1rem}
+  .tl-grid{grid-template-columns:1fr}
+  .tl-title{font-size:1rem}
+  .tl-card-top{padding:1.3rem 1.3rem 1rem}
+  .tl-card-bottom{padding:.9rem 1.3rem}
+}
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PKNXSKFTSL"></script>
@@ -398,7 +426,7 @@ footer strong{color:rgba(255,255,255,.6)}
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#clients">Clients</a></li><li><a href="#stories">Stories</a></li><li><a href="#certifications">Credentials</a></li>
+    <li><a href="#clients">Clients</a></li><li><a href="#articles">Articles</a></li><li><a href="#stories">Stories</a></li><li><a href="#certifications">Credentials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -659,6 +687,58 @@ footer strong{color:rgba(255,255,255,.6)}
   </div>
 </section>
 
+
+
+<!-- THOUGHT LEADERSHIP -->
+<section class="tl-section" id="articles">
+  <div class="si">
+    <div class="reveal">
+      <div class="eyebrow">Thought Leadership</div>
+      <h2 class="section-h">Articles &amp; Insights</h2>
+      <p style="font-size:.95rem;color:var(--muted);margin-top:.8rem;max-width:560px;line-height:1.75">Sharing perspectives on enterprise business, the ISP/ICT industry in Bangladesh, and the challenges nobody talks about.</p>
+    </div>
+    <div class="tl-grid">
+
+      <div class="tl-card reveal">
+        <div class="tl-card-top">
+          <div>
+            <span class="tl-source">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn Article
+            </span>
+            <span class="tl-tag">ISP/ICT Industry</span>
+          </div>
+          <div class="tl-title">A Closer Look at the Failure Nobody in Bangladesh&#8217;s ISP Sector Talks About</div>
+          <div class="tl-excerpt">An honest, data-driven examination of the systemic gaps in Bangladesh&#8217;s internet service industry &#8212; from last-mile delivery failures and enterprise SLA shortfalls to the commercial pressures that prevent service providers from having the conversations that matter most.</div>
+        </div>
+        <div class="tl-card-bottom">
+          <span class="tl-meta">By Fahmid Ferdous &middot; LinkedIn</span>
+          <a class="tl-read" href="https://www.linkedin.com/posts/fahmidferdous_a-closer-look-at-the-failure-nobody-in-bangladeshs-ugcPost-7489529021190258688-kJ8O/" target="_blank" rel="noopener">
+            Read Article
+            <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Placeholder card for future articles -->
+      <div class="tl-card reveal" style="border-style:dashed;opacity:.55">
+        <div class="tl-card-top" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;text-align:center">
+          <div style="width:44px;height:44px;border-radius:50%;background:var(--gold-pale);border:1px solid rgba(200,144,42,.2);display:grid;place-items:center;margin-bottom:1rem;font-size:1.3rem">&#9998;</div>
+          <div style="font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--muted);margin-bottom:.5rem">More Articles Coming</div>
+          <div style="font-size:.82rem;color:var(--muted);line-height:1.65">Share your next LinkedIn article link and I&#8217;ll add it here instantly.</div>
+        </div>
+        <div class="tl-card-bottom"><span class="tl-meta">Stay tuned</span></div>
+      </div>
+
+    </div>
+    <div class="tl-more reveal">
+      <a href="https://www.linkedin.com/in/fahmidferdous/" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="#0a66c2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        View all posts on LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
 
 <!-- STORIES -->
 <section class="stories-section" id="stories">
