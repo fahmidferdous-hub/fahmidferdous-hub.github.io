@@ -423,6 +423,63 @@ footer strong{color:rgba(255,255,255,.6)}
   .wa-btn svg{width:26px;height:26px}
   .wa-tooltip{font-size:.7rem}
 }
+
+/* ── PRELOADER ── */
+#preloader{position:fixed;inset:0;background:var(--dark);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1.5rem;transition:opacity .6s ease,visibility .6s ease}
+#preloader.done{opacity:0;visibility:hidden;pointer-events:none}
+.pre-logo{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:var(--gold);letter-spacing:.05em;animation:pre-pulse 1s ease-in-out infinite alternate}
+@keyframes pre-pulse{from{opacity:.6}to{opacity:1}}
+.pre-bar{width:140px;height:2px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.pre-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold2));width:0;animation:pre-load 1.4s ease forwards}
+@keyframes pre-load{to{width:100%}}
+.pre-label{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+/* ── SCROLL PROGRESS BAR ── */
+#progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(to right,var(--gold),var(--gold2));z-index:9998;transition:width .1s linear;border-radius:0 2px 2px 0}
+
+/* ── BACK TO TOP ── */
+#back-top{position:fixed;bottom:98px;right:28px;width:46px;height:46px;border-radius:50%;background:var(--dark2);border:1px solid var(--border-d);color:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:498;opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s,background .2s,border-color .2s;text-decoration:none}
+#back-top.show{opacity:1;transform:translateY(0)}
+#back-top:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+#back-top svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+@media(max-width:640px){#back-top{bottom:88px;right:16px;width:40px;height:40px}}
+
+/* ── TYPEWRITER ── */
+.typewriter-wrap{display:inline-block;min-height:1.5em}
+.typewriter-text{border-right:2px solid var(--gold);padding-right:4px;animation:blink .75s step-end infinite}
+@keyframes blink{0%,100%{border-color:var(--gold)}50%{border-color:transparent}}
+
+/* ── DOWNLOAD CV BUTTON ── */
+.btn-cv{background:rgba(200,144,42,.1);color:var(--gold);border:1.5px solid rgba(200,144,42,.35)}
+.btn-cv:hover{background:rgba(200,144,42,.2);border-color:var(--gold)}
+.btn-cv svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ── TESTIMONIALS ── */
+.testi-section{background:var(--dark);padding:6rem 5vw}
+.testi-section .si{max-width:1300px;margin:0 auto}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.testi-card{background:var(--dark2);border:1px solid var(--border-d);border-radius:20px;padding:2rem;position:relative;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column;gap:1.2rem}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.35);border-color:rgba(200,144,42,.25)}
+.testi-quote-icon{font-family:'Cormorant Garamond',serif;font-size:5rem;color:var(--gold);line-height:.6;opacity:.35;position:absolute;top:1.2rem;right:1.5rem}
+.testi-stars{display:flex;gap:.25rem}
+.testi-star{color:var(--gold);font-size:.9rem}
+.testi-text{font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.8;font-style:italic;flex:1}
+.testi-divider{height:1px;background:var(--border-d)}
+.testi-person{display:flex;align-items:center;gap:.85rem}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:var(--gold-pale);border:1px solid rgba(200,144,42,.3);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;color:var(--gold);flex-shrink:0}
+.testi-name{font-size:.85rem;font-weight:600;color:#fff}
+.testi-role{font-size:.72rem;color:rgba(255,255,255,.4)}
+.testi-note{font-size:.65rem;color:rgba(200,144,42,.5);margin-top:.2rem;font-style:italic}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.testi-section{padding:3.5rem 1.1rem}.testi-card{padding:1.5rem}}
+
+/* ── COMPANY BADGES IN EXP ── */
+.exp-co-row{display:flex;align-items:center;gap:.65rem;margin-bottom:.2rem}
+.exp-co-badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;font-size:.6rem;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:.03em}
+
+/* ── 3D TILT ── */
+.tilt{transform-style:preserve-3d;will-change:transform}
+
 </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PKNXSKFTSL"></script>
@@ -432,16 +489,36 @@ footer strong{color:rgba(255,255,255,.6)}
   gtag('js', new Date());
   gtag('config', 'G-PKNXSKFTSL');
 </script>
+
+<!-- Open Graph / Social Preview -->
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://fahmidferdous-hub.github.io/"/>
+<meta property="og:title" content="Fahmid Ferdous — Enterprise Business Growth Specialist"/>
+<meta property="og:description" content="7+ years driving B2B client acquisition, strategic partnerships and ISP/ICT solutions across Bangladesh. Currently at BDCOM Online Ltd."/>
+<meta property="og:image" content="https://fahmidferdous-hub.github.io/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Fahmid Ferdous — Enterprise Business Growth Specialist"/>
+<meta name="twitter:description" content="7+ years in B2B sales, ISP/ICT solutions and strategic partnerships. Currently at BDCOM Online Ltd., Dhaka."/>
+<meta name="twitter:image" content="https://fahmidferdous-hub.github.io/og-image.png"/>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
 </head>
 <body>
 
 <!-- NAV -->
+<div id="preloader">
+  <div class="pre-logo">FF</div>
+  <div class="pre-bar"><div class="pre-fill"></div></div>
+  <div class="pre-label">Fahmid Ferdous &middot; Portfolio</div>
+</div>
+<div id="progress-bar"></div>
 <nav id="nav">
   <a class="nav-logo" href="#top">Fahmid <span>F.</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#clients">Clients</a></li><li><a href="#articles">Articles</a></li><li><a href="#stories">Stories</a></li><li><a href="#certifications">Credentials</a></li>
+    <li><a href="#clients">Clients</a></li><li><a href="#testimonials">Reviews</a></li><li><a href="#articles">Articles</a></li><li><a href="#stories">Stories</a></li><li><a href="#certifications">Credentials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -458,11 +535,12 @@ footer strong{color:rgba(255,255,255,.6)}
       <div class="hero-greeting">Hello, I&#8217;m</div>
       <h1 class="hero-name">Fahmid<br/><span class="line2">Ferdous</span></h1>
       <p class="hero-title">
-        <strong>Enterprise Business Growth Specialist</strong> — driving B2B client acquisition, strategic partnerships, and customised solution development across Bangladesh&#8217;s ISP &amp; ICT sector.
+        <span class="typewriter-wrap"><span class="typewriter-text" id="typewriter">Enterprise Business Growth Specialist</span></span> — driving B2B client acquisition, strategic partnerships, and customised solution development across Bangladesh&#8217;s ISP &amp; ICT sector.
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-primary">Get In Touch &#8594;</a>
         <a href="#experience" class="btn btn-outline">View Experience</a>
+        <a href="cv.pdf" download class="btn btn-cv"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Download CV</a>
       </div>
       <div class="hero-stats">
         <div class="stat-item"><div class="stat-num"><span id="c1">0</span>+</div><div class="stat-label">Years Experience</div></div>
@@ -610,7 +688,7 @@ footer strong{color:rgba(255,255,255,.6)}
         <div class="exp-card current">
           <div class="exp-period">September 2025 &#8212; Present &middot; Current Role</div>
           <div class="exp-role">Assistant Manager, Enterprise Business</div>
-          <div class="exp-company">BDCOM Online Ltd.</div>
+          <div class="exp-co-row"><div class="exp-co-badge" style="background:#1565c0">BD</div><div class="exp-company" style="margin-bottom:0">BDCOM Online Ltd.</div></div>
           <div class="exp-concern">Listed ISP/ICT &middot; Dhaka &amp; Chittagong Stock Exchange</div>
           <div class="exp-tags"><span class="exp-tag">Cybersecurity</span><span class="exp-tag">EMS</span><span class="exp-tag">Vehicle Tracking</span><span class="exp-tag">VM Services</span><span class="exp-tag">Server Co-Location</span><span class="exp-tag">Product Bundling</span></div>
           <ul class="exp-bullets">
@@ -623,7 +701,7 @@ footer strong{color:rgba(255,255,255,.6)}
         <div class="exp-card">
           <div class="exp-period">July 2024 &#8212; August 2025</div>
           <div class="exp-role">Assistant Manager, Corporate Sales</div>
-          <div class="exp-company">Telnet Communication Ltd.</div>
+          <div class="exp-co-row"><div class="exp-co-badge" style="background:#e65100">TL</div><div class="exp-company" style="margin-bottom:0">Telnet Communication Ltd.</div></div>
           <div class="exp-concern">A Concern of Khaled Group</div>
           <div class="exp-tags"><span class="exp-tag">Segmentation</span><span class="exp-tag">Lead Analysis</span><span class="exp-tag">Campaigns</span></div>
           <ul class="exp-bullets">
@@ -636,7 +714,7 @@ footer strong{color:rgba(255,255,255,.6)}
         <div class="exp-card">
           <div class="exp-period">February 2022 &#8212; June 2024</div>
           <div class="exp-role">Senior Executive, Corporate Sales</div>
-          <div class="exp-company">Cosmopolitan Communications Ltd.</div>
+          <div class="exp-co-row"><div class="exp-co-badge" style="background:#6a1b9a">CC</div><div class="exp-company" style="margin-bottom:0">Cosmopolitan Communications Ltd.</div></div>
           <div class="exp-concern">A Concern of Summit Group</div>
           <div class="exp-tags"><span class="exp-tag">Market Analysis</span><span class="exp-tag">CRM</span><span class="exp-tag">Dashboards</span></div>
           <ul class="exp-bullets">
@@ -649,7 +727,7 @@ footer strong{color:rgba(255,255,255,.6)}
         <div class="exp-card">
           <div class="exp-period">October 2019 &#8212; February 2022</div>
           <div class="exp-role">Executive &#8594; Senior Executive, Corporate Sales</div>
-          <div class="exp-company">Link3 Technologies Ltd.</div>
+          <div class="exp-co-row"><div class="exp-co-badge" style="background:#b71c1c">L3</div><div class="exp-company" style="margin-bottom:0">Link3 Technologies Ltd.</div></div>
           <div class="exp-concern">Executive (Oct 2019 &#8211; Jun 2021) &middot; Senior Executive (Jul 2021 &#8211; Feb 2022)</div>
           <div class="exp-tags"><span class="exp-tag">Enterprise Accounts</span><span class="exp-tag">Solution Selling</span></div>
           <ul class="exp-bullets">
@@ -661,7 +739,7 @@ footer strong{color:rgba(255,255,255,.6)}
         <div class="exp-card">
           <div class="exp-period">February 2019 &#8212; June 2019</div>
           <div class="exp-role">Acquisition Executive Intern, E-Commerce &amp; F-Commerce</div>
-          <div class="exp-company">Pathao Courier</div>
+          <div class="exp-co-row"><div class="exp-co-badge" style="background:#e53935">PT</div><div class="exp-company" style="margin-bottom:0">Pathao Courier</div></div>
           <div class="exp-concern">A Concern of Pathao Group</div>
           <ul class="exp-bullets">
             <li>Handled client acquisition; onboarded online business owners via Facebook.</li>
@@ -682,12 +760,12 @@ footer strong{color:rgba(255,255,255,.6)}
       <h2 class="section-h">Certifications</h2>
     </div>
     <div class="certs-grid">
-      <div class="cert-card reveal"><div class="cert-issuer">Google Cloud Skills Boost &middot; Coursera</div><div class="cert-title">Generative AI Leader</div><div class="cert-date">January 2026</div><div class="cert-id">ID: OH6UYLWHKIZT</div></div>
-      <div class="cert-card reveal"><div class="cert-issuer">University of Alberta &middot; Coursera</div><div class="cert-title">Software Processes and Agile Practices</div><div class="cert-date">February 2026</div><div class="cert-id">ID: D7NOJMRQ82YF</div></div>
-      <div class="cert-card reveal"><div class="cert-issuer">University of Alberta &middot; Coursera</div><div class="cert-title">Introduction to Software Product Management</div><div class="cert-date">January 2026</div><div class="cert-id">ID: QP1D75GITZTC</div></div>
-      <div class="cert-card reveal"><div class="cert-issuer">Ghulam Sumdany Don</div><div class="cert-title">Sales Mastery Training</div><div class="cert-date">2021</div></div>
-      <div class="cert-card reveal"><div class="cert-issuer">Business School Society &middot; IUB</div><div class="cert-title">MS Office Workshop</div><div class="cert-date">IUB, Dhaka</div></div>
-      <div class="cert-card reveal"><div class="cert-issuer">British Council Bangladesh</div><div class="cert-title">General English Programme (Intermediate II)</div><div class="cert-date">2007 &middot; 2 Months</div></div>
+      <div class="cert-card reveal tilt"><div class="cert-issuer">Google Cloud Skills Boost &middot; Coursera</div><div class="cert-title">Generative AI Leader</div><div class="cert-date">January 2026</div><div class="cert-id">ID: OH6UYLWHKIZT</div></div>
+      <div class="cert-card reveal tilt"><div class="cert-issuer">University of Alberta &middot; Coursera</div><div class="cert-title">Software Processes and Agile Practices</div><div class="cert-date">February 2026</div><div class="cert-id">ID: D7NOJMRQ82YF</div></div>
+      <div class="cert-card reveal tilt"><div class="cert-issuer">University of Alberta &middot; Coursera</div><div class="cert-title">Introduction to Software Product Management</div><div class="cert-date">January 2026</div><div class="cert-id">ID: QP1D75GITZTC</div></div>
+      <div class="cert-card reveal tilt"><div class="cert-issuer">Ghulam Sumdany Don</div><div class="cert-title">Sales Mastery Training</div><div class="cert-date">2021</div></div>
+      <div class="cert-card reveal tilt"><div class="cert-issuer">Business School Society &middot; IUB</div><div class="cert-title">MS Office Workshop</div><div class="cert-date">IUB, Dhaka</div></div>
+      <div class="cert-card reveal tilt"><div class="cert-issuer">British Council Bangladesh</div><div class="cert-title">General English Programme (Intermediate II)</div><div class="cert-date">2007 &middot; 2 Months</div></div>
     </div>
     <div class="reveal" style="margin-top:4rem">
       <div class="eyebrow">Academic Background</div>
@@ -703,6 +781,66 @@ footer strong{color:rgba(255,255,255,.6)}
 </section>
 
 
+
+
+<!-- TESTIMONIALS -->
+<section class="testi-section" id="testimonials">
+  <div class="si">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--gold)">What People Say</div>
+      <h2 class="section-h light">Testimonials</h2>
+      <p style="color:rgba(255,255,255,.45);font-size:.9rem;margin-top:.8rem;max-width:520px;line-height:1.75">Feedback from clients, partners and colleagues across Bangladesh&#8217;s ISP &amp; ICT industry.</p>
+    </div>
+    <div class="testi-grid">
+
+      <div class="testi-card reveal tilt">
+        <div class="testi-quote-icon">&#8220;</div>
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-text">&#8220;Fahmid has an exceptional ability to understand client needs and translate them into tailored solutions. His persistence and professionalism closed deals we thought were impossible. A genuinely trustworthy partner.&#8221;</div>
+        <div class="testi-divider"></div>
+        <div class="testi-person">
+          <div class="testi-avatar">HI</div>
+          <div>
+            <div class="testi-name">Head of IT Operations</div>
+            <div class="testi-role">Leading FMCG Company, Dhaka</div>
+            <div class="testi-note">&#9998; Replace with your LinkedIn recommendation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal tilt">
+        <div class="testi-quote-icon">&#8220;</div>
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-text">&#8220;Working with Fahmid was different from day one. He listened before pitching and delivered exactly what he promised &#8212; on time, even when the odds weren&#8217;t in his favour. I&#8217;d recommend him without hesitation.&#8221;</div>
+        <div class="testi-divider"></div>
+        <div class="testi-person">
+          <div class="testi-avatar">DI</div>
+          <div>
+            <div class="testi-name">Director, Operations</div>
+            <div class="testi-role">Real Estate &amp; Infrastructure Firm</div>
+            <div class="testi-note">&#9998; Replace with your LinkedIn recommendation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal tilt">
+        <div class="testi-quote-icon">&#8220;</div>
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-text">&#8220;Fahmid brings a rare combination of analytical thinking and genuine relationship-building. He consistently outperformed targets while keeping every client satisfied. One of the best enterprise sales professionals I&#8217;ve worked alongside.&#8221;</div>
+        <div class="testi-divider"></div>
+        <div class="testi-person">
+          <div class="testi-avatar">SM</div>
+          <div>
+            <div class="testi-name">Senior Manager, Business Development</div>
+            <div class="testi-role">ISP/ICT Industry, Bangladesh</div>
+            <div class="testi-note">&#9998; Replace with your LinkedIn recommendation</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- THOUGHT LEADERSHIP -->
 <section class="tl-section" id="articles">
@@ -892,7 +1030,7 @@ footer strong{color:rgba(255,255,255,.6)}
     <div class="stories-grid">
 
       <!-- Story 1 -->
-      <div class="story-card reveal">
+      <div class="story-card reveal tilt">
         <div class="story-head">
           <div class="story-num">Story 01</div>
           <div class="story-sector">Government &amp; Utilities</div>
@@ -930,7 +1068,7 @@ footer strong{color:rgba(255,255,255,.6)}
       </div>
 
       <!-- Story 2 -->
-      <div class="story-card reveal">
+      <div class="story-card reveal tilt">
         <div class="story-head">
           <div class="story-num">Story 02</div>
           <div class="story-sector">Multinational Corporate</div>
@@ -968,7 +1106,7 @@ footer strong{color:rgba(255,255,255,.6)}
       </div>
 
       <!-- Story 3 -->
-      <div class="story-card reveal">
+      <div class="story-card reveal tilt">
         <div class="story-head">
           <div class="story-num">Story 03</div>
           <div class="story-sector">Manufacturing &amp; FMCG</div>
@@ -1006,7 +1144,7 @@ footer strong{color:rgba(255,255,255,.6)}
       </div>
 
       <!-- Story 4 -->
-      <div class="story-card reveal">
+      <div class="story-card reveal tilt">
         <div class="story-head">
           <div class="story-num">Story 04</div>
           <div class="story-sector">Education &amp; NGO</div>
@@ -1150,6 +1288,9 @@ if(hbtn){
 }
 </script>
 
+<a id="back-top" href="#top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</a>
 <!-- WhatsApp Float Button -->
 <div class="wa-float">
   <div class="wa-tooltip">Chat on WhatsApp</div>
@@ -1159,6 +1300,88 @@ if(hbtn){
     </svg>
   </a>
 </div>
+
+
+<script>
+// Preloader
+window.addEventListener('load', function(){
+  setTimeout(function(){
+    var pl = document.getElementById('preloader');
+    if(pl) pl.classList.add('done');
+  }, 1500);
+});
+
+// Scroll progress bar
+window.addEventListener('scroll', function(){
+  var winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  document.getElementById('progress-bar').style.width = (winScroll / height * 100) + '%';
+  // Back to top
+  var bt = document.getElementById('back-top');
+  if(bt) bt.classList.toggle('show', winScroll > 400);
+});
+
+// Typewriter
+(function(){
+  var phrases = [
+    'Enterprise Business Growth Specialist',
+    'B2B Sales & Partnership Expert',
+    'ISP/ICT Solution Architect',
+    'Corporate Account Manager',
+    'Market Expansion Strategist'
+  ];
+  var el = document.getElementById('typewriter');
+  if(!el) return;
+  var pi = 0, ci = 0, deleting = false, pause = false;
+  function tick(){
+    if(pause) return;
+    var phrase = phrases[pi];
+    if(!deleting){
+      el.textContent = phrase.substring(0, ci + 1);
+      ci++;
+      if(ci === phrase.length){ deleting = true; pause = true; setTimeout(function(){ pause=false; }, 2000); return; }
+      setTimeout(tick, 55);
+    } else {
+      el.textContent = phrase.substring(0, ci - 1);
+      ci--;
+      if(ci === 0){ deleting = false; pi = (pi + 1) % phrases.length; pause = true; setTimeout(function(){ pause=false; tick(); }, 400); return; }
+      setTimeout(tick, 28);
+    }
+  }
+  setTimeout(tick, 1200);
+})();
+
+// 3D Card Tilt
+(function(){
+  var isMobile = window.matchMedia('(max-width:768px)').matches;
+  if(isMobile) return;
+  document.querySelectorAll('.tilt').forEach(function(card){
+    card.addEventListener('mousemove', function(e){
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var cx = rect.width / 2, cy = rect.height / 2;
+      var rx = (y - cy) / cy * 7;
+      var ry = (cx - x) / cx * 7;
+      card.style.transition = 'transform .08s ease';
+      card.style.transform = 'perspective(900px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-4px)';
+    });
+    card.addEventListener('mouseleave', function(){
+      card.style.transition = 'transform .5s ease';
+      card.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
+})();
+
+// WhatsApp click tracking
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+  el.addEventListener('click', function(){
+    if(typeof gtag !== 'undefined'){
+      gtag('event', 'whatsapp_click', {event_category:'contact', event_label:'WhatsApp Button'});
+    }
+  });
+});
+</script>
 
 </body>
 </html>
