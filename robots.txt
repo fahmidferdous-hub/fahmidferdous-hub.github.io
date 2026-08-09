@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fahmidferdous-hub.github.io/sitemap.xml
