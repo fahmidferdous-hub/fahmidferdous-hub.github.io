@@ -498,6 +498,67 @@ footer strong{color:rgba(255,255,255,.6)}
 /* ── 3D TILT ── */
 .tilt{transform-style:preserve-3d;will-change:transform}
 
+
+/* ── LIGHT MODE ── */
+body.light-mode{--dark:#1e3a5f;--dark2:#244878;--dark3:#2d5a96;--border-d:rgba(255,255,255,0.15)}
+body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
+.mode-toggle{background:none;border:1px solid var(--border-d);color:rgba(255,255,255,.65);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.mode-toggle:hover{background:rgba(200,144,42,.15);border-color:var(--gold);color:var(--gold)}
+
+/* ── LANGUAGE TOGGLE ── */
+.lang-btn{background:none;border:1px solid var(--border-d);color:rgba(255,255,255,.65);padding:.3rem .65rem;border-radius:100px;cursor:pointer;font-size:.7rem;font-weight:600;letter-spacing:.06em;font-family:'Inter',sans-serif;transition:all .2s;display:flex;align-items:center;gap:.35rem}
+.lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── SERVICES SECTION ── */
+.services-section{background:var(--dark);padding:6rem 5vw}
+.services-section .si{max-width:1300px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
+.svc-card{background:var(--dark2);border:1px solid var(--border-d);border-radius:16px;padding:1.6rem 1.4rem;transition:transform .25s,border-color .25s,box-shadow .25s;cursor:default;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-card:hover{transform:translateY(-5px);border-color:rgba(200,144,42,.3);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-icon{width:48px;height:48px;border-radius:12px;background:rgba(200,144,42,.1);border:1px solid rgba(200,144,42,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem}
+.svc-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.5rem;line-height:1.3}
+.svc-desc{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65}
+.svc-tag{display:inline-block;font-size:.62rem;font-weight:600;color:var(--gold);background:rgba(200,144,42,.08);border:1px solid rgba(200,144,42,.15);border-radius:100px;padding:.18rem .6rem;margin-top:.8rem}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.services-section{padding:3.5rem 1.1rem}.services-grid{grid-template-columns:1fr 1fr;gap:.8rem}.svc-card{padding:1.2rem 1rem}.svc-icon{width:40px;height:40px;font-size:1.2rem}}
+
+/* ── INDUSTRY VERTICALS ── */
+.industry-section{background:var(--card);border-top:1px solid var(--border-l);border-bottom:1px solid var(--border-l);padding:4rem 5vw}
+.industry-section .si{max-width:1300px;margin:0 auto;text-align:center}
+.industry-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2.5rem}
+.ind-item{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1.2rem 1.5rem;border:1px solid var(--border-l);border-radius:14px;background:var(--light);transition:transform .2s,border-color .2s,box-shadow .2s;min-width:110px;cursor:default}
+.ind-item:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 8px 24px rgba(200,144,42,.1)}
+.ind-icon{font-size:1.8rem}
+.ind-name{font-size:.72rem;font-weight:600;color:var(--muted);text-align:center;line-height:1.3}
+@media(max-width:640px){.industry-section{padding:3rem 1.1rem}.ind-item{padding:.9rem 1rem;min-width:90px}.ind-icon{font-size:1.5rem}}
+
+/* ── BOOK A MEETING ── */
+.btn-meet{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.2)}
+.btn-meet:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4)}
+.btn-meet svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ── ANIMATED SKILL BARS ── */
+.skill-bars{display:flex;flex-direction:column;gap:.85rem}
+.sb-item{}
+.sb-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+.sb-label{font-size:.8rem;font-weight:500;color:var(--ink)}
+.sb-pct{font-size:.72rem;font-weight:600;color:var(--gold)}
+.sb-track{height:5px;background:rgba(0,0,0,.07);border-radius:100px;overflow:hidden}
+.sb-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold2));border-radius:100px;width:0%;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+
+/* ── CLICK TO COPY ── */
+.copy-btn{position:relative;cursor:pointer}
+.copy-tip{position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:.65rem;padding:.2rem .6rem;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;font-weight:500}
+.copy-tip.show{opacity:1}
+
+/* ── LINKEDIN BADGE ── */
+.li-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;background:rgba(10,102,194,.1);border:1px solid rgba(10,102,194,.25);border-radius:100px;text-decoration:none;transition:background .2s,transform .2s;margin-top:1.5rem}
+.li-badge:hover{background:rgba(10,102,194,.18);transform:translateY(-2px)}
+.li-badge svg{width:16px;height:16px;fill:#0a66c2}
+.li-badge span{font-size:.78rem;font-weight:600;color:#0a66c2}
+
 </style>
 <!-- Build: 20260806-094549 -->
 <!-- Google Analytics -->
@@ -522,6 +583,9 @@ footer strong{color:rgba(255,255,255,.6)}
 <meta name="twitter:description" content="7+ years in B2B sales, ISP/ICT solutions and strategic partnerships. Currently at BDCOM Online Ltd., Dhaka."/>
 <meta name="twitter:image" content="https://fahmidferdous-hub.github.io/og-image.png"/>
 <link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Fahmid Ferdous","jobTitle":"Assistant Manager, Enterprise Business","worksFor":{"@type":"Organization","name":"BDCOM Online Ltd."},"url":"https://fahmidferdous-hub.github.io","image":"https://fahmidferdous-hub.github.io/photo.jpg","email":"fahmidferdous@gmail.com","telephone":"+8801753735196","address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},"sameAs":["https://www.linkedin.com/in/fahmidferdous"],"alumniOf":{"@type":"EducationalOrganization","name":"Independent University Bangladesh"},"knowsAbout":["B2B Enterprise Sales","ISP ICT Solutions","Cybersecurity","EMS","Vehicle Tracking","Strategic Partnerships","Product Bundling"]}
+</script>
 </head>
 <body>
 
@@ -541,7 +605,7 @@ footer strong{color:rgba(255,255,255,.6)}
     <li><a href="#stories">Stories</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <button class="lang-btn" onclick="window.open('https://translate.google.com/translate?sl=en&tl=bn&u=https://fahmidferdous-hub.github.io','_blank')" title="বাংলায় দেখুন">🇧🇩 বাংলা</button><button class="mode-toggle" id="modeToggle" title="Toggle light mode">☀️</button><button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HERO -->
@@ -560,6 +624,7 @@ footer strong{color:rgba(255,255,255,.6)}
       <div class="hero-btns">
         <a href="#contact" class="btn btn-primary">Get In Touch &#8594;</a>
         <a href="#experience" class="btn btn-outline">View Experience</a>
+        <a href="mailto:fahmidferdous@gmail.com?subject=Meeting%20Request%20via%20Portfolio&body=Hi%20Fahmid%2C%0A%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20schedule%20a%20meeting.%0A%0APreferred%20date%2Ftime%3A%20%0ATopic%3A%20%0ACompany%3A%20%0A%0ABest%20regards%2C" class="btn btn-meet"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>Book a Meeting</a>
       </div>
       <div class="hero-stats">
         <div class="stat-item"><div class="stat-num"><span id="c1">0</span>+</div><div class="stat-label">Years Experience</div></div>
@@ -605,6 +670,27 @@ footer strong{color:rgba(255,255,255,.6)}
     <span class="m-item"><span class="m-dot"></span>Server Co-Location</span>
   </div>
 </div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="si">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--gold)">What I Offer</div>
+      <h2 class="section-h light">Enterprise Solutions</h2>
+      <p style="color:rgba(255,255,255,.45);font-size:.9rem;margin-top:.8rem;max-width:540px;line-height:1.75">Tailored ISP &amp; ICT solutions for corporate clients across Bangladesh — from connectivity to cybersecurity.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal tilt"><div class="svc-icon">🌐</div><div class="svc-name">Dedicated Internet Connectivity</div><div class="svc-desc">High-speed, reliable enterprise-grade dedicated internet with guaranteed uptime SLA for your operations.</div><span class="svc-tag">Core Service</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon">🔐</div><div class="svc-name">Cybersecurity Solutions</div><div class="svc-desc">End-to-end cybersecurity services protecting your network, data, and business infrastructure from threats.</div><span class="svc-tag">High Demand</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon">📊</div><div class="svc-name">Environment Monitoring (EMS)</div><div class="svc-desc">Real-time environment monitoring for server rooms, substations, and industrial facilities — alerts &amp; dashboards.</div><span class="svc-tag">Smart Solution</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon">🚗</div><div class="svc-name">Vehicle Tracking (VTS)</div><div class="svc-desc">GPS-based fleet and vehicle tracking solutions with live maps, route history, and management reporting.</div><span class="svc-tag">Fleet Tech</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon">☁️</div><div class="svc-name">VM &amp; Cloud Hosting</div><div class="svc-desc">Scalable virtual machine and cloud hosting services tailored to enterprise workloads and business continuity.</div><span class="svc-tag">Cloud Ready</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon">🖥️</div><div class="svc-name">Server Co-Location</div><div class="svc-desc">Secure, climate-controlled co-location for your servers in BDCOM's Tier-III standard data centre facilities.</div><span class="svc-tag">Data Centre</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon">💼</div><div class="svc-name">Microsoft Cloud Solutions</div><div class="svc-desc">Microsoft 365, Azure, and productivity suite licensing and deployment for enterprise teams.</div><span class="svc-tag">Microsoft Partner</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon">🌍</div><div class="svc-name">Domain, SSL &amp; Web Services</div><div class="svc-desc">Domain registration, SSL certificates, web hosting, and email hosting bundled for business clients.</div><span class="svc-tag">Web Bundle</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section class="section" id="about" style="background:#fff">
@@ -685,6 +771,29 @@ footer strong{color:rgba(255,255,255,.6)}
     </div>
   </div>
   <div class="clients-more reveal">&amp; many more across fintech, RMG, healthcare, manufacturing &amp; NGO sectors</div>
+</section>
+
+
+<!-- INDUSTRIES -->
+<section class="industry-section" id="industries">
+  <div class="si">
+    <div class="reveal">
+      <div class="eyebrow" style="justify-content:center">Industries Served</div>
+      <h2 class="section-h" style="text-align:center">Sectors I Work With</h2>
+    </div>
+    <div class="industry-grid">
+      <div class="ind-item reveal"><div class="ind-icon">⚡</div><div class="ind-name">Power &amp; Utilities</div></div>
+      <div class="ind-item reveal"><div class="ind-icon">🏭</div><div class="ind-name">FMCG &amp; Food</div></div>
+      <div class="ind-item reveal"><div class="ind-icon">🎓</div><div class="ind-name">Education</div></div>
+      <div class="ind-item reveal"><div class="ind-icon">🏢</div><div class="ind-name">Real Estate</div></div>
+      <div class="ind-item reveal"><div class="ind-icon">⚙️</div><div class="ind-name">Manufacturing</div></div>
+      <div class="ind-item reveal"><div class="ind-icon">🌿</div><div class="ind-name">Environmental</div></div>
+      <div class="ind-item reveal"><div class="ind-icon">🌍</div><div class="ind-name">NGO &amp; Development</div></div>
+      <div class="ind-item reveal"><div class="ind-icon">📡</div><div class="ind-name">Telecom &amp; ISP</div></div>
+      <div class="ind-item reveal"><div class="ind-icon">⚛️</div><div class="ind-name">Energy &amp; Nuclear</div></div>
+      <div class="ind-item reveal"><div class="ind-icon">👔</div><div class="ind-name">Legal &amp; Professional</div></div>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -1202,8 +1311,8 @@ footer strong{color:rgba(255,255,255,.6)}
     <div class="contact-grid">
       <div class="reveal">
         <p class="contact-desc">Whether you&#8217;re exploring a strategic partnership, an enterprise collaboration, or simply want to connect &#8212; I&#8217;d love to hear from you.</p>
-        <a href="mailto:fahmidferdous@gmail.com" class="clink"><div class="clink-icon">&#9993;</div><div><strong>fahmidferdous@gmail.com</strong><span>Email &#8212; preferred for business enquiries</span></div></a>
-        <a href="tel:+8801753735196" class="clink"><div class="clink-icon">&#128222;</div><div><strong>+88 01753-735196</strong><span>Mobile / WhatsApp</span></div></a>
+        <a href="mailto:fahmidferdous@gmail.com" class="clink copy-btn" data-copy="fahmidferdous@gmail.com"><div class="copy-tip">Copied!</div><div class="clink-icon">&#9993;</div><div><strong>fahmidferdous@gmail.com</strong><span>Email &#8212; tap to copy address</span></div></a>
+        <a href="tel:+8801753735196" class="clink copy-btn" data-copy="+8801753735196"><div class="copy-tip">Copied!</div><div class="clink-icon">&#128222;</div><div><strong>+88 01753-735196</strong><span>Mobile / tap to copy number</span></div></a>
         <a href="https://wa.me/8801753735196?text=Hi%20Fahmid%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener" class="clink" style="border-color:rgba(37,211,102,.25)"><div class="clink-icon" style="background:rgba(37,211,102,.1);border-color:rgba(37,211,102,.2)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div><strong style="color:#25d366">WhatsApp Business</strong><span>Message me directly</span></div></a>
         <a href="https://www.linkedin.com/in/fahmidferdous" target="_blank" rel="noopener" class="clink"><div class="clink-icon">&#128188;</div><div><strong>linkedin.com/in/fahmidferdous</strong><span>LinkedIn Profile</span></div></a>
       </div>
@@ -1273,6 +1382,67 @@ footer strong{color:rgba(255,255,255,.6)}
   footer .footer-inner-grid > div:last-child{justify-content:center}
   footer .footer-inner-grid > div:nth-child(2){display:none}
 }
+
+/* ── LIGHT MODE ── */
+body.light-mode{--dark:#1e3a5f;--dark2:#244878;--dark3:#2d5a96;--border-d:rgba(255,255,255,0.15)}
+body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
+.mode-toggle{background:none;border:1px solid var(--border-d);color:rgba(255,255,255,.65);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.mode-toggle:hover{background:rgba(200,144,42,.15);border-color:var(--gold);color:var(--gold)}
+
+/* ── LANGUAGE TOGGLE ── */
+.lang-btn{background:none;border:1px solid var(--border-d);color:rgba(255,255,255,.65);padding:.3rem .65rem;border-radius:100px;cursor:pointer;font-size:.7rem;font-weight:600;letter-spacing:.06em;font-family:'Inter',sans-serif;transition:all .2s;display:flex;align-items:center;gap:.35rem}
+.lang-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── SERVICES SECTION ── */
+.services-section{background:var(--dark);padding:6rem 5vw}
+.services-section .si{max-width:1300px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem}
+.svc-card{background:var(--dark2);border:1px solid var(--border-d);border-radius:16px;padding:1.6rem 1.4rem;transition:transform .25s,border-color .25s,box-shadow .25s;cursor:default;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-card:hover{transform:translateY(-5px);border-color:rgba(200,144,42,.3);box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-icon{width:48px;height:48px;border-radius:12px;background:rgba(200,144,42,.1);border:1px solid rgba(200,144,42,.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem}
+.svc-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.5rem;line-height:1.3}
+.svc-desc{font-size:.78rem;color:rgba(255,255,255,.45);line-height:1.65}
+.svc-tag{display:inline-block;font-size:.62rem;font-weight:600;color:var(--gold);background:rgba(200,144,42,.08);border:1px solid rgba(200,144,42,.15);border-radius:100px;padding:.18rem .6rem;margin-top:.8rem}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.services-section{padding:3.5rem 1.1rem}.services-grid{grid-template-columns:1fr 1fr;gap:.8rem}.svc-card{padding:1.2rem 1rem}.svc-icon{width:40px;height:40px;font-size:1.2rem}}
+
+/* ── INDUSTRY VERTICALS ── */
+.industry-section{background:var(--card);border-top:1px solid var(--border-l);border-bottom:1px solid var(--border-l);padding:4rem 5vw}
+.industry-section .si{max-width:1300px;margin:0 auto;text-align:center}
+.industry-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:2.5rem}
+.ind-item{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1.2rem 1.5rem;border:1px solid var(--border-l);border-radius:14px;background:var(--light);transition:transform .2s,border-color .2s,box-shadow .2s;min-width:110px;cursor:default}
+.ind-item:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 8px 24px rgba(200,144,42,.1)}
+.ind-icon{font-size:1.8rem}
+.ind-name{font-size:.72rem;font-weight:600;color:var(--muted);text-align:center;line-height:1.3}
+@media(max-width:640px){.industry-section{padding:3rem 1.1rem}.ind-item{padding:.9rem 1rem;min-width:90px}.ind-icon{font-size:1.5rem}}
+
+/* ── BOOK A MEETING ── */
+.btn-meet{background:rgba(255,255,255,.08);color:#fff;border:1.5px solid rgba(255,255,255,.2)}
+.btn-meet:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.4)}
+.btn-meet svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ── ANIMATED SKILL BARS ── */
+.skill-bars{display:flex;flex-direction:column;gap:.85rem}
+.sb-item{}
+.sb-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:.4rem}
+.sb-label{font-size:.8rem;font-weight:500;color:var(--ink)}
+.sb-pct{font-size:.72rem;font-weight:600;color:var(--gold)}
+.sb-track{height:5px;background:rgba(0,0,0,.07);border-radius:100px;overflow:hidden}
+.sb-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold2));border-radius:100px;width:0%;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+
+/* ── CLICK TO COPY ── */
+.copy-btn{position:relative;cursor:pointer}
+.copy-tip{position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:.65rem;padding:.2rem .6rem;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;font-weight:500}
+.copy-tip.show{opacity:1}
+
+/* ── LINKEDIN BADGE ── */
+.li-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;background:rgba(10,102,194,.1);border:1px solid rgba(10,102,194,.25);border-radius:100px;text-decoration:none;transition:background .2s,transform .2s;margin-top:1.5rem}
+.li-badge:hover{background:rgba(10,102,194,.18);transform:translateY(-2px)}
+.li-badge svg{width:16px;height:16px;fill:#0a66c2}
+.li-badge span{font-size:.78rem;font-weight:600;color:#0a66c2}
+
 </style>
 
 <script>
@@ -1464,6 +1634,51 @@ if(msgField && charCount){
     charCount.style.color = this.value.length > 450 ? '#c8902a' : 'rgba(255,255,255,.28)';
   });
 }
+</script>
+
+
+<script>
+// Light/Dark mode toggle
+var modeBtn = document.getElementById('modeToggle');
+var lightMode = localStorage.getItem('lightMode') === 'true';
+function applyMode(){
+  document.body.classList.toggle('light-mode', lightMode);
+  if(modeBtn) modeBtn.textContent = lightMode ? '🌙' : '☀️';
+}
+applyMode();
+if(modeBtn){
+  modeBtn.addEventListener('click', function(){
+    lightMode = !lightMode;
+    localStorage.setItem('lightMode', lightMode);
+    applyMode();
+  });
+}
+
+// Animated skill bars
+var sbObs = new IntersectionObserver(function(entries){
+  if(entries[0].isIntersecting){
+    document.querySelectorAll('.sb-fill').forEach(function(bar){
+      bar.style.width = bar.dataset.w + '%';
+    });
+    sbObs.disconnect();
+  }
+},{threshold:0.3});
+var sbEl = document.getElementById('skillBars');
+if(sbEl) sbObs.observe(sbEl);
+
+// Click to copy
+document.querySelectorAll('.copy-btn').forEach(function(btn){
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    var text = btn.dataset.copy;
+    if(text && navigator.clipboard){
+      navigator.clipboard.writeText(text).then(function(){
+        var tip = btn.querySelector('.copy-tip');
+        if(tip){ tip.classList.add('show'); setTimeout(function(){ tip.classList.remove('show'); }, 1800); }
+      });
+    }
+  });
+});
 </script>
 
 </body>
