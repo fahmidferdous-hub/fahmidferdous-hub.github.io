@@ -585,6 +585,32 @@ footer strong{color:rgba(255,255,255,.6)}
 .qr-img{width:110px;height:110px;border-radius:8px;display:block}
 .qr-label{font-size:.68rem;font-weight:600;color:rgba(37,211,102,.8);letter-spacing:.08em;text-transform:uppercase;text-align:center}
 
+
+/* ── SVG SERVICE ICONS ── */
+.svc-icon svg{width:28px;height:28px;stroke:#c8902a;fill:none;stroke-width:1.8}
+
+/* ── ABOUT PHOTO ── */
+.about-photo-wrap{position:relative;width:100px;height:100px;flex-shrink:0}
+.about-photo-wrap::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:conic-gradient(from 0deg,var(--gold),var(--gold2),rgba(255,255,255,.1),var(--gold));animation:ring-spin 6s linear infinite;z-index:0}
+.about-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;position:relative;z-index:1;border:4px solid #fff}
+.about-left-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem}
+
+/* ── ARTICLE THUMBNAILS ── */
+.tl-thumb{height:80px;margin:-1px -1px 0;border-radius:20px 20px 0 0;display:flex;align-items:center;padding:0 1.6rem;gap:.8rem;overflow:hidden;position:relative;flex-shrink:0}
+.tl-thumb::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.12)}
+.tl-thumb-icon{font-size:2rem;position:relative;z-index:1}
+.tl-thumb-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);position:relative;z-index:1}
+
+/* ── PROBLEM ACCORDION (mobile) ── */
+@media(max-width:640px){
+  .pain-card,.sol-card{cursor:pointer;position:relative;padding-right:2.5rem}
+  .pain-desc,.sol-desc{display:none}
+  .pain-card.acc-open .pain-desc,.sol-card.acc-open .sol-desc{display:block}
+  .pain-card::after,.sol-card::after{content:'＋';position:absolute;top:.9rem;right:1rem;font-size:1rem;color:rgba(255,255,255,.35)}
+  .pain-card.acc-open::after,.sol-card.acc-open::after{content:'－';color:var(--gold)}
+  .problem-grid{grid-template-columns:1fr !important}
+}
+
 /* ── LIGHT MODE ── */
 body.light-mode{--dark:#1e3a5f;--dark2:#244878;--dark3:#2d5a96;--border-d:rgba(255,255,255,0.15)}
 body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
@@ -797,14 +823,14 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       <p style="color:rgba(255,255,255,.45);font-size:.9rem;margin-top:.8rem;max-width:540px;line-height:1.75">Tailored ISP &amp; ICT solutions for corporate clients across Bangladesh — from connectivity to cybersecurity.</p>
     </div>
     <div class="services-grid">
-      <div class="svc-card reveal tilt"><div class="svc-icon">🌐</div><div class="svc-name">Dedicated Internet Connectivity</div><div class="svc-desc">High-speed, reliable enterprise-grade dedicated internet with guaranteed uptime SLA for your operations.</div><span class="svc-tag">Core Service</span></div>
-      <div class="svc-card reveal tilt"><div class="svc-icon">🔐</div><div class="svc-name">Cybersecurity Solutions</div><div class="svc-desc">End-to-end cybersecurity services protecting your network, data, and business infrastructure from threats.</div><span class="svc-tag">High Demand</span></div>
-      <div class="svc-card reveal tilt"><div class="svc-icon">📊</div><div class="svc-name">Environment Monitoring (EMS)</div><div class="svc-desc">Real-time environment monitoring for server rooms, substations, and industrial facilities — alerts &amp; dashboards.</div><span class="svc-tag">Smart Solution</span></div>
-      <div class="svc-card reveal tilt"><div class="svc-icon">🚗</div><div class="svc-name">Vehicle Tracking (VTS)</div><div class="svc-desc">GPS-based fleet and vehicle tracking solutions with live maps, route history, and management reporting.</div><span class="svc-tag">Fleet Tech</span></div>
-      <div class="svc-card reveal tilt"><div class="svc-icon">☁️</div><div class="svc-name">VM &amp; Cloud Hosting</div><div class="svc-desc">Scalable virtual machine and cloud hosting services tailored to enterprise workloads and business continuity.</div><span class="svc-tag">Cloud Ready</span></div>
-      <div class="svc-card reveal tilt"><div class="svc-icon">🖥️</div><div class="svc-name">Server Co-Location</div><div class="svc-desc">Secure, climate-controlled co-location for your servers in BDCOM's Tier-III standard data centre facilities.</div><span class="svc-tag">Data Centre</span></div>
-      <div class="svc-card reveal tilt"><div class="svc-icon">💼</div><div class="svc-name">Microsoft Cloud Solutions</div><div class="svc-desc">Microsoft 365, Azure, and productivity suite licensing and deployment for enterprise teams.</div><span class="svc-tag">Microsoft Partner</span></div>
-      <div class="svc-card reveal tilt"><div class="svc-icon">🌍</div><div class="svc-name">Domain, SSL &amp; Web Services</div><div class="svc-desc">Domain registration, SSL certificates, web hosting, and email hosting bundled for business clients.</div><span class="svc-tag">Web Bundle</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div><div class="svc-name">Dedicated Internet Connectivity</div><div class="svc-desc">High-speed, reliable enterprise-grade dedicated internet with guaranteed uptime SLA for your operations.</div><span class="svc-tag">Core Service</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="svc-name">Cybersecurity Solutions</div><div class="svc-desc">End-to-end cybersecurity services protecting your network, data, and business infrastructure from threats.</div><span class="svc-tag">High Demand</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path stroke-linecap="round" d="M8 21h8M12 17v4M7 10l3 3 4-4 3 3"/></svg></div><div class="svc-name">Environment Monitoring (EMS)</div><div class="svc-desc">Real-time environment monitoring for server rooms, substations, and industrial facilities — alerts &amp; dashboards.</div><span class="svc-tag">Smart Solution</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg></div><div class="svc-name">Vehicle Tracking (VTS)</div><div class="svc-desc">GPS-based fleet and vehicle tracking solutions with live maps, route history, and management reporting.</div><span class="svc-tag">Fleet Tech</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div><div class="svc-name">VM &amp; Cloud Hosting</div><div class="svc-desc">Scalable virtual machine and cloud hosting services tailored to enterprise workloads and business continuity.</div><span class="svc-tag">Cloud Ready</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path stroke-linecap="round" d="M6 6h.01M6 18h.01"/></svg></div><div class="svc-name">Server Co-Location</div><div class="svc-desc">Secure, climate-controlled co-location for your servers in BDCOM's Tier-III standard data centre facilities.</div><span class="svc-tag">Data Centre</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div><div class="svc-name">Microsoft Cloud Solutions</div><div class="svc-desc">Microsoft 365, Azure, and productivity suite licensing and deployment for enterprise teams.</div><span class="svc-tag">Microsoft Partner</span></div>
+      <div class="svc-card reveal tilt"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path stroke-linecap="round" d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div class="svc-name">Domain, SSL &amp; Web Services</div><div class="svc-desc">Domain registration, SSL certificates, web hosting, and email hosting bundled for business clients.</div><span class="svc-tag">Web Bundle</span></div>
     </div>
   </div>
 </section>
@@ -856,8 +882,15 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 <section class="section" id="about" style="background:#fff">
   <div class="section-inner">
     <div class="reveal">
-      <div class="eyebrow">About Me</div>
-      <h2 class="section-h">Enterprise growth,<br/>built on relationships.</h2>
+      <div class="about-left-header">
+        <div class="about-photo-wrap">
+          <img src="photo.jpg" alt="Fahmid Ferdous" loading="lazy"/>
+        </div>
+        <div>
+          <div class="eyebrow">About Me</div>
+          <h2 class="section-h">Enterprise growth,<br/>built on relationships.</h2>
+        </div>
+      </div>
     </div>
     <div class="about-grid">
       <div class="reveal">
@@ -1143,6 +1176,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
     <div class="tl-grid">
 
       <div class="tl-card reveal">
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#b87d2e,#e8b44a)"><span class="tl-thumb-icon">📡</span><span class="tl-thumb-label">ISP Industry</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1164,6 +1198,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#2563eb,#1d4ed8)"><span class="tl-thumb-icon">🌐</span><span class="tl-thumb-label">IoT & Tech</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1185,6 +1220,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)"><span class="tl-thumb-icon">🤖</span><span class="tl-thumb-label">AI & Future</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1206,6 +1242,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#059669,#065f46)"><span class="tl-thumb-icon">🔐</span><span class="tl-thumb-label">Cybersecurity</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1227,6 +1264,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#d97706,#b45309)"><span class="tl-thumb-icon">🤝</span><span class="tl-thumb-label">Client Relations</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1248,6 +1286,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#dc2626,#991b1b)"><span class="tl-thumb-icon">⚠️</span><span class="tl-thumb-label">Business Strategy</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1269,6 +1308,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#0284c7,#0369a1)"><span class="tl-thumb-icon">📶</span><span class="tl-thumb-label">Telecom & Policy</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1476,13 +1516,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
     <div class="contact-grid">
       <div class="reveal">
         <p class="contact-desc">Whether you&#8217;re exploring a strategic partnership, an enterprise collaboration, or simply want to connect &#8212; I&#8217;d love to hear from you.</p>
-        <div class="free-cta">
-          <div class="free-cta-text">
-            <strong>&#127381; Free Enterprise Assessment</strong>
-            <span>Not sure what solution fits? I&#8217;ll assess your connectivity, security &amp; infrastructure needs — at no cost.</span>
-          </div>
-          <a href="mailto:fahmidferdous@gmail.com?subject=Free%20Enterprise%20Assessment%20Request&body=Hi%20Fahmid%2C%0A%0AI%20would%20like%20a%20free%20enterprise%20assessment.%0A%0ACompany%3A%20%0AIndustry%3A%20%0AMain%20challenge%3A%20" class="free-cta-btn">Request Free Assessment &#8594;</a>
-        </div>
+        
         <div class="contact-icons-wrap">
           <div class="contact-icons-row">
             <a class="ci ci-email" href="mailto:fahmidferdous@gmail.com" title="Send Email">
@@ -1643,6 +1677,32 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 .qr-wrap{margin-top:2rem;display:inline-flex;flex-direction:column;align-items:center;gap:.6rem;padding:1.2rem;background:rgba(37,211,102,.06);border:1px solid rgba(37,211,102,.2);border-radius:16px}
 .qr-img{width:110px;height:110px;border-radius:8px;display:block}
 .qr-label{font-size:.68rem;font-weight:600;color:rgba(37,211,102,.8);letter-spacing:.08em;text-transform:uppercase;text-align:center}
+
+
+/* ── SVG SERVICE ICONS ── */
+.svc-icon svg{width:28px;height:28px;stroke:#c8902a;fill:none;stroke-width:1.8}
+
+/* ── ABOUT PHOTO ── */
+.about-photo-wrap{position:relative;width:100px;height:100px;flex-shrink:0}
+.about-photo-wrap::before{content:'';position:absolute;inset:-3px;border-radius:50%;background:conic-gradient(from 0deg,var(--gold),var(--gold2),rgba(255,255,255,.1),var(--gold));animation:ring-spin 6s linear infinite;z-index:0}
+.about-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;position:relative;z-index:1;border:4px solid #fff}
+.about-left-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem}
+
+/* ── ARTICLE THUMBNAILS ── */
+.tl-thumb{height:80px;margin:-1px -1px 0;border-radius:20px 20px 0 0;display:flex;align-items:center;padding:0 1.6rem;gap:.8rem;overflow:hidden;position:relative;flex-shrink:0}
+.tl-thumb::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.12)}
+.tl-thumb-icon{font-size:2rem;position:relative;z-index:1}
+.tl-thumb-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);position:relative;z-index:1}
+
+/* ── PROBLEM ACCORDION (mobile) ── */
+@media(max-width:640px){
+  .pain-card,.sol-card{cursor:pointer;position:relative;padding-right:2.5rem}
+  .pain-desc,.sol-desc{display:none}
+  .pain-card.acc-open .pain-desc,.sol-card.acc-open .sol-desc{display:block}
+  .pain-card::after,.sol-card::after{content:'＋';position:absolute;top:.9rem;right:1rem;font-size:1rem;color:rgba(255,255,255,.35)}
+  .pain-card.acc-open::after,.sol-card.acc-open::after{content:'－';color:var(--gold)}
+  .problem-grid{grid-template-columns:1fr !important}
+}
 
 /* ── LIGHT MODE ── */
 body.light-mode{--dark:#1e3a5f;--dark2:#244878;--dark3:#2d5a96;--border-d:rgba(255,255,255,0.15)}
@@ -1899,6 +1959,15 @@ if(msgField && charCount){
 
 
 <script>
+
+
+// Problem section accordion on mobile
+(function(){
+  if(window.innerWidth > 640) return;
+  document.querySelectorAll('.pain-card,.sol-card').forEach(function(card){
+    card.addEventListener('click',function(){ this.classList.toggle('acc-open'); });
+  });
+})();
 
 // How I Work steps reveal
 var hiwObs = new IntersectionObserver(function(entries){
