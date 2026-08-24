@@ -586,6 +586,60 @@ footer strong{color:rgba(255,255,255,.6)}
 .qr-label{font-size:.68rem;font-weight:600;color:rgba(37,211,102,.8);letter-spacing:.08em;text-transform:uppercase;text-align:center}
 
 
+
+/* ── GRADIENT HERO NAME ── */
+h1.hero-name{background:linear-gradient(135deg,#fff 0%,#f0e0c0 45%,#c8902a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+h1.hero-name .line2{background:linear-gradient(135deg,#e8b44a,#c8902a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── CURSOR GLOW ── */
+#cursor-glow{position:fixed;pointer-events:none;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(200,144,42,.06) 0%,transparent 70%);transform:translate(-50%,-50%);z-index:1;top:0;left:0;transition:top .05s linear,left .05s linear}
+
+/* ── CARD HOVER GLOW ── */
+.svc-card:hover{box-shadow:0 8px 32px rgba(200,144,42,.18),0 0 0 1px rgba(200,144,42,.25) !important}
+.testi-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.4),0 0 24px rgba(200,144,42,.1) !important}
+.cert-card:hover{box-shadow:0 8px 32px rgba(200,144,42,.14) !important}
+
+/* ── CURRENTLY WORKING ON ── */
+.current-badge{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:500;color:rgba(255,255,255,.5);margin-top:.6rem;padding:.35rem .9rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px}
+.current-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:pulse 1.8s infinite}
+
+/* ── LANGUAGE BADGES ── */
+.lang-badges{display:flex;gap:.6rem;margin-top:.4rem;flex-wrap:wrap}
+.lang-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;padding:.3rem .8rem;border-radius:100px;background:var(--light);border:1px solid var(--border-l);color:var(--ink)}
+
+/* ── CERT VERIFY LINK ── */
+.cert-verify{display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:600;color:var(--gold);text-decoration:none;margin-top:.5rem;opacity:.75;transition:opacity .2s}
+.cert-verify:hover{opacity:1}
+.cert-verify svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ── ARTICLE SHARE BUTTONS ── */
+.tl-share{display:flex;gap:.5rem;padding:.8rem 1.6rem;border-top:1px solid var(--border-l);background:var(--light);border-radius:0 0 20px 20px}
+.share-btn{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:600;padding:.3rem .75rem;border-radius:100px;text-decoration:none;border:1px solid var(--border-l);color:var(--muted);transition:all .2s;cursor:pointer;background:none;font-family:'Inter',sans-serif}
+.share-btn:hover{transform:translateY(-1px)}
+.share-li:hover{background:rgba(10,102,194,.08);border-color:rgba(10,102,194,.3);color:#0a66c2}
+.share-wa:hover{background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.3);color:#128c7e}
+.share-copy:hover{background:var(--gold-pale);border-color:rgba(200,144,42,.3);color:var(--gold)}
+
+/* ── STICKY MOBILE DOCK ── */
+.mob-dock{display:none}
+@media(max-width:640px){
+  .mob-dock{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:490;background:rgba(8,15,28,.96);backdrop-filter:blur(20px);border-top:1px solid var(--border-d);padding:.55rem 0 calc(.55rem + env(safe-area-inset-bottom));justify-content:space-around;align-items:center}
+  .mob-dock-btn{display:flex;flex-direction:column;align-items:center;gap:.22rem;text-decoration:none;padding:.35rem .9rem;border-radius:10px;transition:background .2s;flex:1}
+  .mob-dock-btn:active{background:rgba(200,144,42,.12)}
+  .mob-dock-btn svg{width:22px;height:22px}
+  .mob-dock-btn span{font-size:.52rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  body{padding-bottom:68px}
+  #back-top{bottom:86px !important}
+  .wa-float{display:none}
+}
+
+/* ── SECTION TRANSITION ── */
+.wave-divider{overflow:hidden;line-height:0;display:block}
+.wave-divider svg{display:block;width:100%}
+
+/* ── LAST UPDATED ── */
+.last-updated{font-size:.7rem;color:rgba(255,255,255,.2);text-align:center;padding-top:.5rem}
+
 /* ── SVG SERVICE ICONS ── */
 .svc-icon svg{width:28px;height:28px;stroke:#c8902a;fill:none;stroke-width:1.8}
 
@@ -699,10 +753,12 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Fahmid Ferdous","jobTitle":"Assistant Manager, Enterprise Business","worksFor":{"@type":"Organization","name":"BDCOM Online Ltd."},"url":"https://fahmidferdous-hub.github.io","image":"https://fahmidferdous-hub.github.io/photo.jpg","email":"fahmidferdous@gmail.com","telephone":"+8801753735196","address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},"sameAs":["https://www.linkedin.com/in/fahmidferdous"],"alumniOf":{"@type":"EducationalOrganization","name":"Independent University Bangladesh"},"knowsAbout":["B2B Enterprise Sales","ISP ICT Solutions","Cybersecurity","EMS","Vehicle Tracking","Strategic Partnerships","Product Bundling"]}
 </script>
+<meta name="keywords" content="enterprise internet Bangladesh, cybersecurity Dhaka, BDCOM Online, ISP solutions Bangladesh, B2B sales Dhaka, vehicle tracking Bangladesh, EMS monitoring Bangladesh, dedicated internet Dhaka, enterprise business development, Fahmid Ferdous, BDCOM sales manager"/>
 </head>
 <body>
 
 <!-- NAV -->
+<div id="cursor-glow"></div>
 <div id="preloader">
   <div class="pre-logo">FF</div>
   <div class="pre-bar"><div class="pre-fill"></div></div>
@@ -731,6 +787,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
     <div class="hero-text">
       <div class="hero-greeting">Hello, I&#8217;m</div>
       <h1 class="hero-name">Fahmid<br/><span class="line2">Ferdous</span></h1>
+      <div class="current-badge"><span class="current-dot"></span>Currently expanding Cybersecurity &amp; EMS portfolio at BDCOM Online Ltd.</div>
       <p class="hero-title">
         <span class="typewriter-wrap"><span class="typewriter-text" id="typewriter">Enterprise Business Growth Specialist</span></span> — driving B2B client acquisition, strategic partnerships, and customised solution development across Bangladesh&#8217;s ISP &amp; ICT sector.
       </p>
@@ -835,6 +892,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
   </div>
 </section>
 
+<div class="wave-divider" style="background:#fff;margin-bottom:-1px"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,0 1080,40 1440,20 L1440,40 L0,40 Z" fill="#f7f5f1"/></svg></div>
 <!-- HOW I WORK -->
 <section class="hiw-section" id="process">
   <div class="si">
@@ -878,6 +936,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
   </div>
 </section>
 
+<div class="wave-divider" style="background:var(--dark);margin-bottom:-1px"><svg viewBox="0 0 1440 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="#080f1c"/></svg></div>
 <!-- ABOUT -->
 <section class="section" id="about" style="background:#fff">
   <div class="section-inner">
@@ -898,7 +957,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
         <div class="about-text">
           <p>I&#8217;m a dynamic enterprise sales and business development professional with over six years of experience spanning Bangladesh&#8217;s most competitive ISP and ICT organisations &#8212; from Link3 Technologies and Cosmopolitan Communications to Telnet, and now BDCOM Online Ltd.</p>
           <p>My strength lies at the intersection of analytical thinking and relationship-building: I identify emerging market opportunities, design customised solution bundles, and lead cross-functional teams to close high-value deals.</p>
-          <p>Fluent in <strong>English</strong> and <strong>Bengali</strong>. Certified in Generative AI, Agile Practices, and Software Product Management from Google &amp; University of Alberta. MBA in Marketing from <strong>Independent University Bangladesh</strong>.</p>
+          <p>Certified in Generative AI, Agile Practices, and Software Product Management from Google &amp; University of Alberta.<div class="lang-badges"><span class="lang-badge">🇧🇩 Bengali — Native</span><span class="lang-badge">🇬🇧 English — Fluent</span></div> MBA in Marketing from <strong>Independent University Bangladesh</strong>.</p>
         </div>
       </div>
       <div class="reveal">
@@ -1086,9 +1145,9 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       <h2 class="section-h">Certifications</h2>
     </div>
     <div class="certs-grid">
-      <div class="cert-card reveal tilt"><div class="cert-issuer">Google Cloud Skills Boost &middot; Coursera</div><div class="cert-title">Generative AI Leader</div><div class="cert-date">January 2026</div><div class="cert-id">ID: OH6UYLWHKIZT</div></div>
-      <div class="cert-card reveal tilt"><div class="cert-issuer">University of Alberta &middot; Coursera</div><div class="cert-title">Software Processes and Agile Practices</div><div class="cert-date">February 2026</div><div class="cert-id">ID: D7NOJMRQ82YF</div></div>
-      <div class="cert-card reveal tilt"><div class="cert-issuer">University of Alberta &middot; Coursera</div><div class="cert-title">Introduction to Software Product Management</div><div class="cert-date">January 2026</div><div class="cert-id">ID: QP1D75GITZTC</div></div>
+      <div class="cert-card reveal tilt"><div class="cert-issuer">Google Cloud Skills Boost &middot; Coursera</div><div class="cert-title">Generative AI Leader</div><div class="cert-date">January 2026</div><div class="cert-id">ID: OH6UYLWHKIZT</div><a href="https://coursera.org/verify/OH6UYLWHKIZT" target="_blank" rel="noopener" class="cert-verify">Verify &#8599;</a></div>
+      <div class="cert-card reveal tilt"><div class="cert-issuer">University of Alberta &middot; Coursera</div><div class="cert-title">Software Processes and Agile Practices</div><div class="cert-date">February 2026</div><div class="cert-id">ID: D7NOJMRQ82YF</div><a href="https://coursera.org/verify/D7NOJMRQ82YF" target="_blank" rel="noopener" class="cert-verify">Verify &#8599;</a></div>
+      <div class="cert-card reveal tilt"><div class="cert-issuer">University of Alberta &middot; Coursera</div><div class="cert-title">Introduction to Software Product Management</div><div class="cert-date">January 2026</div><div class="cert-id">ID: QP1D75GITZTC</div><a href="https://coursera.org/verify/QP1D75GITZTC" target="_blank" rel="noopener" class="cert-verify">Verify &#8599;</a></div>
       <div class="cert-card reveal tilt"><div class="cert-issuer">Ghulam Sumdany Don</div><div class="cert-title">Sales Mastery Training</div><div class="cert-date">2021</div></div>
       <div class="cert-card reveal tilt"><div class="cert-issuer">Business School Society &middot; IUB</div><div class="cert-title">MS Office Workshop</div><div class="cert-date">IUB, Dhaka</div></div>
       <div class="cert-card reveal tilt"><div class="cert-issuer">British Council Bangladesh</div><div class="cert-title">General English Programme (Intermediate II)</div><div class="cert-date">2007 &middot; 2 Months</div></div>
@@ -1327,7 +1386,12 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
             <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </a>
         </div>
+      <div class="tl-share">
+        <a class="share-btn share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.linkedin.com%2Fpulse%2Fbangladesh-wants-top-20-telecom-nation-one-number-stands-ferdous-szkcf" target="_blank" rel="noopener">&#128188; LinkedIn</a>
+        <a class="share-btn share-wa" href="https://api.whatsapp.com/send?text=Check%20this%20article%20by%20Fahmid%20Ferdous%3A%20https%3A%2F%2Fwww.linkedin.com%2Fpulse%2Fbangladesh-wants-top-20-telecom-nation-one-number-stands-ferdous-szkcf" target="_blank" rel="noopener">&#128172; WhatsApp</a>
+        <button class="share-btn share-copy" onclick="navigator.clipboard&&navigator.clipboard.writeText('https://www.linkedin.com/pulse/bangladesh-wants-top-20-telecom-nation-one-number-stands-ferdous-szkcf').then(function(){this.textContent='Copied!'}.bind(this))" >&#128279; Copy</button>
       </div>
+    </div>
 
 
     </div>
@@ -1606,7 +1670,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
     </div>
     <div style="padding:1.5rem 0;text-align:center;font-size:.72rem;color:rgba(255,255,255,.25)">
-      &copy; <span id="copy-year"></span> Fahmid Ferdous &middot; Dhaka, Bangladesh &middot; All rights reserved
+      &copy; <span id="copy-year"></span> Fahmid Ferdous &middot; Dhaka, Bangladesh &middot; All rights reserved<div class="last-updated">Profile last updated: August 2026</div>
     </div>
   </div>
 </footer>
@@ -1678,6 +1742,60 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 .qr-img{width:110px;height:110px;border-radius:8px;display:block}
 .qr-label{font-size:.68rem;font-weight:600;color:rgba(37,211,102,.8);letter-spacing:.08em;text-transform:uppercase;text-align:center}
 
+
+
+/* ── GRADIENT HERO NAME ── */
+h1.hero-name{background:linear-gradient(135deg,#fff 0%,#f0e0c0 45%,#c8902a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+h1.hero-name .line2{background:linear-gradient(135deg,#e8b44a,#c8902a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ── CURSOR GLOW ── */
+#cursor-glow{position:fixed;pointer-events:none;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(200,144,42,.06) 0%,transparent 70%);transform:translate(-50%,-50%);z-index:1;top:0;left:0;transition:top .05s linear,left .05s linear}
+
+/* ── CARD HOVER GLOW ── */
+.svc-card:hover{box-shadow:0 8px 32px rgba(200,144,42,.18),0 0 0 1px rgba(200,144,42,.25) !important}
+.testi-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.4),0 0 24px rgba(200,144,42,.1) !important}
+.cert-card:hover{box-shadow:0 8px 32px rgba(200,144,42,.14) !important}
+
+/* ── CURRENTLY WORKING ON ── */
+.current-badge{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:500;color:rgba(255,255,255,.5);margin-top:.6rem;padding:.35rem .9rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px}
+.current-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:pulse 1.8s infinite}
+
+/* ── LANGUAGE BADGES ── */
+.lang-badges{display:flex;gap:.6rem;margin-top:.4rem;flex-wrap:wrap}
+.lang-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;font-weight:600;padding:.3rem .8rem;border-radius:100px;background:var(--light);border:1px solid var(--border-l);color:var(--ink)}
+
+/* ── CERT VERIFY LINK ── */
+.cert-verify{display:inline-flex;align-items:center;gap:.3rem;font-size:.68rem;font-weight:600;color:var(--gold);text-decoration:none;margin-top:.5rem;opacity:.75;transition:opacity .2s}
+.cert-verify:hover{opacity:1}
+.cert-verify svg{width:10px;height:10px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ── ARTICLE SHARE BUTTONS ── */
+.tl-share{display:flex;gap:.5rem;padding:.8rem 1.6rem;border-top:1px solid var(--border-l);background:var(--light);border-radius:0 0 20px 20px}
+.share-btn{display:inline-flex;align-items:center;gap:.35rem;font-size:.68rem;font-weight:600;padding:.3rem .75rem;border-radius:100px;text-decoration:none;border:1px solid var(--border-l);color:var(--muted);transition:all .2s;cursor:pointer;background:none;font-family:'Inter',sans-serif}
+.share-btn:hover{transform:translateY(-1px)}
+.share-li:hover{background:rgba(10,102,194,.08);border-color:rgba(10,102,194,.3);color:#0a66c2}
+.share-wa:hover{background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.3);color:#128c7e}
+.share-copy:hover{background:var(--gold-pale);border-color:rgba(200,144,42,.3);color:var(--gold)}
+
+/* ── STICKY MOBILE DOCK ── */
+.mob-dock{display:none}
+@media(max-width:640px){
+  .mob-dock{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:490;background:rgba(8,15,28,.96);backdrop-filter:blur(20px);border-top:1px solid var(--border-d);padding:.55rem 0 calc(.55rem + env(safe-area-inset-bottom));justify-content:space-around;align-items:center}
+  .mob-dock-btn{display:flex;flex-direction:column;align-items:center;gap:.22rem;text-decoration:none;padding:.35rem .9rem;border-radius:10px;transition:background .2s;flex:1}
+  .mob-dock-btn:active{background:rgba(200,144,42,.12)}
+  .mob-dock-btn svg{width:22px;height:22px}
+  .mob-dock-btn span{font-size:.52rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  body{padding-bottom:68px}
+  #back-top{bottom:86px !important}
+  .wa-float{display:none}
+}
+
+/* ── SECTION TRANSITION ── */
+.wave-divider{overflow:hidden;line-height:0;display:block}
+.wave-divider svg{display:block;width:100%}
+
+/* ── LAST UPDATED ── */
+.last-updated{font-size:.7rem;color:rgba(255,255,255,.2);text-align:center;padding-top:.5rem}
 
 /* ── SVG SERVICE ICONS ── */
 .svc-icon svg{width:28px;height:28px;stroke:#c8902a;fill:none;stroke-width:1.8}
@@ -2019,6 +2137,54 @@ document.querySelectorAll('.copy-btn').forEach(function(btn){
         var tip = btn.querySelector('.copy-tip');
         if(tip){ tip.classList.add('show'); setTimeout(function(){ tip.classList.remove('show'); }, 1800); }
       });
+    }
+  });
+});
+</script>
+
+
+<!-- Mobile Sticky Dock -->
+<div class="mob-dock">
+  <a class="mob-dock-btn" href="mailto:fahmidferdous@gmail.com">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#ea4335" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    <span style="color:#ea4335">Email</span>
+  </a>
+  <a class="mob-dock-btn" href="tel:+8801753735196">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#34a853" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+    <span style="color:#34a853">Call</span>
+  </a>
+  <a class="mob-dock-btn" href="https://wa.me/8801753735196?text=Hi%20Fahmid%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span style="color:#25d366">WhatsApp</span>
+  </a>
+  <a class="mob-dock-btn" href="https://www.linkedin.com/in/fahmidferdous" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    <span style="color:#0a66c2">LinkedIn</span>
+  </a>
+</div>
+
+
+<script>
+// Cursor glow
+(function(){
+  var cg = document.getElementById('cursor-glow');
+  if(!cg || window.innerWidth <= 768) return;
+  document.addEventListener('mousemove', function(e){
+    cg.style.left = e.clientX + 'px';
+    cg.style.top = e.clientY + 'px';
+  });
+})();
+
+// Smooth section transition on nav click
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(){
+    var id = this.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if(el){
+      el.classList.remove('section-fade');
+      void el.offsetWidth;
+      el.classList.add('section-fade');
+      setTimeout(function(){ el.classList.remove('section-fade'); }, 500);
     }
   });
 });
