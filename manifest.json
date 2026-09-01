@@ -1,0 +1,24 @@
+{
+  "name": "Fahmid Ferdous \u2014 Enterprise Business",
+  "short_name": "Fahmid F.",
+  "description": "Enterprise Business Growth Specialist | BDCOM Online Ltd. | ISP/ICT Solutions Bangladesh",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080f1c",
+  "theme_color": "#c8902a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

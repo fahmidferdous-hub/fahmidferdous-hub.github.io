@@ -587,6 +587,85 @@ footer strong{color:rgba(255,255,255,.6)}
 
 
 
+
+/* ── SUCCESS METRICS STRIP ── */
+.metrics-strip{background:linear-gradient(135deg,#0d1828,#112040);border-top:1px solid rgba(200,144,42,.2);border-bottom:1px solid rgba(200,144,42,.2);padding:2.5rem 5vw;overflow:hidden;position:relative}
+.metrics-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(200,144,42,.05) 0%,transparent 70%)}
+.metrics-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;position:relative;z-index:1}
+.metric-item{text-align:center;padding:.8rem}
+.metric-num{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#fff;line-height:1;margin-bottom:.4rem}
+.metric-num span{color:var(--gold)}
+.metric-label{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;line-height:1.4}
+.metric-divider{width:1px;background:rgba(255,255,255,.08);align-self:stretch;margin:auto 0}
+@media(max-width:900px){.metrics-inner{grid-template-columns:repeat(3,1fr)}.metric-divider{display:none}}
+@media(max-width:640px){.metrics-strip{padding:2rem 1.1rem}.metrics-inner{grid-template-columns:repeat(2,1fr);gap:1rem}}
+
+/* ── FAQ SECTION ── */
+.faq-section{background:var(--light);padding:6rem 5vw}
+.faq-section .si{max-width:1300px;margin:0 auto}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem}
+.faq-item{background:#fff;border:1px solid var(--border-l);border-radius:14px;overflow:hidden;transition:border-color .2s}
+.faq-item.faq-open{border-color:rgba(200,144,42,.3)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;cursor:pointer;gap:1rem;user-select:none}
+.faq-q-text{font-size:.9rem;font-weight:600;color:var(--ink);line-height:1.4}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border-l);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--muted);flex-shrink:0;transition:all .25s}
+.faq-open .faq-icon{background:var(--gold);border-color:var(--gold);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s}
+.faq-open .faq-a{max-height:200px;padding:0 1.5rem 1.2rem}
+.faq-a-text{font-size:.85rem;color:var(--muted);line-height:1.75;border-top:1px solid var(--border-l);padding-top:1rem}
+@media(max-width:820px){.faq-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.faq-section{padding:3.5rem 1.1rem}.faq-q{padding:1rem 1.2rem}.faq-q-text{font-size:.85rem}}
+
+/* ── COOKIE CONSENT ── */
+#cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:8000;background:rgba(8,15,28,.97);backdrop-filter:blur(16px);border-top:1px solid var(--border-d);padding:1rem 5vw;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;box-shadow:0 -8px 32px rgba(0,0,0,.3)}
+#cookie-bar.show{transform:translateY(0)}
+.cookie-text{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.6;flex:1;min-width:200px}
+.cookie-text a{color:var(--gold);text-decoration:none}
+.cookie-btns{display:flex;gap:.6rem;flex-shrink:0}
+.cookie-btn{padding:.5rem 1.2rem;border-radius:100px;font-size:.75rem;font-weight:600;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:all .2s}
+.cookie-accept{background:var(--gold);color:#fff}
+.cookie-accept:hover{background:var(--gold2)}
+.cookie-decline{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid var(--border-d)}
+.cookie-decline:hover{background:rgba(255,255,255,.12)}
+@media(max-width:640px){#cookie-bar{bottom:68px;padding:.9rem 1.1rem}.cookie-btns{width:100%;justify-content:flex-end}}
+
+/* ── AVAILABILITY STATUS ── */
+.avail-badge{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:100px;padding:.4rem 1rem;margin-bottom:1.2rem}
+.avail-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pulse 1.8s infinite;flex-shrink:0}
+
+/* ── READING TIME ── */
+.read-time{font-size:.68rem;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:.3rem}
+.read-time svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ── CONTACT TYPING MSG ── */
+#typing-msg{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.4rem;min-height:1.2rem;transition:opacity .3s;opacity:0}
+#typing-msg.show{opacity:1}
+
+/* ── RADAR CHART ── */
+.radar-wrap{display:flex;flex-direction:column;align-items:center;gap:1rem}
+#skillRadar{max-width:340px;width:100%}
+.radar-legend{display:flex;flex-wrap:wrap;gap:.4rem .8rem;justify-content:center}
+.radar-leg-item{font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.radar-leg-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ── NEWSLETTER ── */
+.newsletter-section{background:var(--dark2);border-top:1px solid var(--border-d);border-bottom:1px solid var(--border-d);padding:4rem 5vw}
+.newsletter-inner{max-width:600px;margin:0 auto;text-align:center}
+.newsletter-inner h3{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.newsletter-inner p{font-size:.88rem;color:rgba(255,255,255,.45);margin-bottom:1.8rem;line-height:1.7}
+.newsletter-form{display:flex;gap:.7rem;max-width:440px;margin:0 auto}
+.newsletter-input{flex:1;padding:.85rem 1.2rem;background:rgba(255,255,255,.06);border:1px solid var(--border-d);border-radius:100px;color:#fff;font-family:'Inter',sans-serif;font-size:.88rem;outline:none;transition:border-color .2s}
+.newsletter-input::placeholder{color:rgba(255,255,255,.3)}
+.newsletter-input:focus{border-color:var(--gold)}
+.newsletter-sub{padding:.85rem 1.6rem;background:var(--gold);color:#fff;border:none;border-radius:100px;font-size:.83rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:background .2s}
+.newsletter-sub:hover{background:var(--gold2)}
+.newsletter-note{font-size:.68rem;color:rgba(255,255,255,.25);margin-top:.9rem}
+@media(max-width:640px){.newsletter-section{padding:3rem 1.1rem}.newsletter-form{flex-direction:column;border-radius:14px}.newsletter-input,.newsletter-sub{border-radius:10px}}
+
+/* ── WHATSAPP CHANNEL ── */
+.wa-channel{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.3rem;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);border-radius:100px;text-decoration:none;color:#25d366;font-size:.8rem;font-weight:600;transition:all .2s;margin-top:.8rem}
+.wa-channel:hover{background:rgba(37,211,102,.18);transform:translateY(-2px)}
+
 /* ── GRADIENT HERO NAME ── */
 h1.hero-name{background:linear-gradient(135deg,#fff 0%,#f0e0c0 45%,#c8902a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 h1.hero-name .line2{background:linear-gradient(135deg,#e8b44a,#c8902a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -754,6 +833,13 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 {"@context":"https://schema.org","@type":"Person","name":"Fahmid Ferdous","jobTitle":"Assistant Manager, Enterprise Business","worksFor":{"@type":"Organization","name":"BDCOM Online Ltd."},"url":"https://fahmidferdous-hub.github.io","image":"https://fahmidferdous-hub.github.io/photo.jpg","email":"fahmidferdous@gmail.com","telephone":"+8801753735196","address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},"sameAs":["https://www.linkedin.com/in/fahmidferdous"],"alumniOf":{"@type":"EducationalOrganization","name":"Independent University Bangladesh"},"knowsAbout":["B2B Enterprise Sales","ISP ICT Solutions","Cybersecurity","EMS","Vehicle Tracking","Strategic Partnerships","Product Bundling"]}
 </script>
 <meta name="keywords" content="enterprise internet Bangladesh, cybersecurity Dhaka, BDCOM Online, ISP solutions Bangladesh, B2B sales Dhaka, vehicle tracking Bangladesh, EMS monitoring Bangladesh, dedicated internet Dhaka, enterprise business development, Fahmid Ferdous, BDCOM sales manager"/>
+<link rel="manifest" href="/manifest.json"/>
+<meta name="theme-color" content="#c8902a"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Fahmid F."/>
+<link rel="apple-touch-icon" href="/icon-192.png"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -837,6 +923,21 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
     <span class="m-item"><span class="m-dot"></span>Go-to-Market Strategy</span>
     <span class="m-item"><span class="m-dot"></span>CRM &amp; Data Analysis</span>
     <span class="m-item"><span class="m-dot"></span>Server Co-Location</span>
+  </div>
+</div>
+
+<!-- SUCCESS METRICS -->
+<div class="metrics-strip">
+  <div class="metrics-inner">
+    <div class="metric-item reveal"><div class="metric-num">99.8<span>%</span></div><div class="metric-label">Uptime Delivered</div></div>
+    <div class="metric-divider"></div>
+    <div class="metric-item reveal"><div class="metric-num">23<span>%</span></div><div class="metric-label">Avg. Cost Reduction</div></div>
+    <div class="metric-divider"></div>
+    <div class="metric-item reveal"><div class="metric-num">4<span>x</span></div><div class="metric-label">Contract Growth</div></div>
+    <div class="metric-divider"></div>
+    <div class="metric-item reveal"><div class="metric-num">300<span>+</span></div><div class="metric-label">Enterprises Served</div></div>
+    <div class="metric-divider"></div>
+    <div class="metric-item reveal"><div class="metric-num">7<span>+</span></div><div class="metric-label">Years Experience</div></div>
   </div>
 </div>
 
@@ -962,24 +1063,18 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
       <div class="reveal">
         <div class="eyebrow" style="margin-bottom:1.2rem">Key Proficiencies</div>
-      <div class="skill-bars" id="skillBars">
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">B2B Client Acquisition</span><span class="sb-pct">95%</span></div><div class="sb-track"><div class="sb-fill" data-w="95"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Strategic Negotiation &amp; Deal Closure</span><span class="sb-pct">90%</span></div><div class="sb-track"><div class="sb-fill" data-w="90"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Corporate Account Management</span><span class="sb-pct">92%</span></div><div class="sb-track"><div class="sb-fill" data-w="92"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Product Bundling &amp; Solution Design</span><span class="sb-pct">88%</span></div><div class="sb-track"><div class="sb-fill" data-w="88"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">ISP/IT Solution Selling</span><span class="sb-pct">90%</span></div><div class="sb-track"><div class="sb-fill" data-w="90"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Go-to-Market Strategy</span><span class="sb-pct">85%</span></div><div class="sb-track"><div class="sb-fill" data-w="85"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Lead Generation &amp; Onboarding</span><span class="sb-pct">92%</span></div><div class="sb-track"><div class="sb-fill" data-w="92"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Data Analysis &amp; Reporting</span><span class="sb-pct">80%</span></div><div class="sb-track"><div class="sb-fill" data-w="80"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">MS Excel &amp; PowerPoint</span><span class="sb-pct">82%</span></div><div class="sb-track"><div class="sb-fill" data-w="82"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Digital Content Strategy</span><span class="sb-pct">75%</span></div><div class="sb-track"><div class="sb-fill" data-w="75"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Leadership &amp; Team Management</span><span class="sb-pct">85%</span></div><div class="sb-track"><div class="sb-fill" data-w="85"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Project Management</span><span class="sb-pct">82%</span></div><div class="sb-track"><div class="sb-fill" data-w="82"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Stakeholder Communication</span><span class="sb-pct">88%</span></div><div class="sb-track"><div class="sb-fill" data-w="88"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Market Research &amp; Intelligence</span><span class="sb-pct">83%</span></div><div class="sb-track"><div class="sb-fill" data-w="83"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">CRM Management</span><span class="sb-pct">87%</span></div><div class="sb-track"><div class="sb-fill" data-w="87"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Competitive Analysis</span><span class="sb-pct">84%</span></div><div class="sb-track"><div class="sb-fill" data-w="84"></div></div></div>
-        <div class="sb-item"><div class="sb-top"><span class="sb-label">Revenue Growth Strategy</span><span class="sb-pct">88%</span></div><div class="sb-track"><div class="sb-fill" data-w="88"></div></div></div>
+      <div class="radar-wrap">
+        <canvas id="skillRadar"></canvas>
+        <div class="radar-legend">
+          <div class="radar-leg-item"><span class="radar-leg-dot"></span>B2B Acquisition</div>
+          <div class="radar-leg-item"><span class="radar-leg-dot"></span>Negotiation</div>
+          <div class="radar-leg-item"><span class="radar-leg-dot"></span>Account Mgmt</div>
+          <div class="radar-leg-item"><span class="radar-leg-dot"></span>Solution Design</div>
+          <div class="radar-leg-item"><span class="radar-leg-dot"></span>Go-to-Market</div>
+          <div class="radar-leg-item"><span class="radar-leg-dot"></span>Leadership</div>
+          <div class="radar-leg-item"><span class="radar-leg-dot"></span>Revenue Growth</div>
+          <div class="radar-leg-item"><span class="radar-leg-dot"></span>Data Analysis</div>
+        </div>
       </div>
       </div>
     </div>
@@ -1248,7 +1343,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
           <div class="tl-excerpt">An honest, data-driven examination of the systemic gaps in Bangladesh&#8217;s internet service industry &#8212; from last-mile delivery failures and enterprise SLA shortfalls to the commercial pressures that prevent service providers from having the conversations that matter most.</div>
         </div>
         <div class="tl-card-bottom">
-          <span class="tl-meta">By Fahmid Ferdous &middot; LinkedIn</span>
+          <span class="tl-meta">By Fahmid Ferdous &middot; LinkedIn</span> &middot; <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg>3 min read</span> &middot; <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg>4 min read</span> &middot; <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg>5 min read</span> &middot; <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg>4 min read</span> &middot; <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg>4 min read</span> &middot; <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg>5 min read</span>
           <a class="tl-read" href="https://www.linkedin.com/posts/fahmidferdous_a-closer-look-at-the-failure-nobody-in-bangladeshs-ugcPost-7489529021190258688-kJ8O/" target="_blank" rel="noopener">
             Read Article
             <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -1380,7 +1475,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
           <div class="tl-excerpt">Bangladesh has bold ambitions for its telecom sector, but a single critical metric reveals the gap between aspiration and reality. A data-driven analysis of where the country stands, what is holding it back, and what needs to change for the vision to become achievable.</div>
         </div>
         <div class="tl-card-bottom">
-          <span class="tl-meta">By Fahmid Ferdous &middot; LinkedIn Pulse</span>
+          <span class="tl-meta">By Fahmid Ferdous &middot; LinkedIn Pulse</span> &middot; <span class="read-time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" d="M12 6v6l4 2"/></svg>6 min read</span>
           <a class="tl-read" href="https://www.linkedin.com/pulse/bangladesh-wants-top-20-telecom-nation-one-number-stands-ferdous-szkcf" target="_blank" rel="noopener">
             Read Article
             <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -1570,6 +1665,60 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="si">
+    <div class="reveal" style="text-align:center">
+      <div class="eyebrow" style="justify-content:center">Quick Answers</div>
+      <h2 class="section-h" style="text-align:center">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How long does installation typically take?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-text">For most enterprise setups, deployment takes 3–7 business days from contract signing. Complex multi-site or data centre installations may take 2–3 weeks. I coordinate the full process and keep you updated at every stage.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What areas does BDCOM cover?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-text">BDCOM Online Ltd. covers major commercial and industrial zones across Dhaka, Chittagong, and surrounding areas. For specific coverage at your location, contact me directly and I'll confirm within 24 hours.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What is included in the SLA?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-text">Our enterprise SLAs include guaranteed uptime percentage, response time commitments (typically 4 hours), dedicated support contact, monthly performance reports, and penalty clauses for downtime beyond the agreed threshold.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can multiple services be bundled together?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-text">Absolutely — bundling is one of my specialities. Combining services like dedicated internet, cybersecurity, EMS, and VTS under a single contract typically reduces your total cost by 15–25% versus purchasing separately.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How do I get started?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-text">Simply reach out via email, WhatsApp, or the contact form. I'll schedule a free 30-minute discovery call within 24 hours, understand your requirements, and provide a tailored proposal — no commitment required.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What makes your approach different?</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a"><div class="faq-a-text">I listen before I pitch. My first meeting is always about understanding your business — not selling a product. I also stay involved post-deployment to ensure you're getting the performance promised, not just during the sales process.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="section contact-section" id="contact">
   <div class="section-inner">
@@ -1642,6 +1791,25 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
     Download Professional Profile
   </a>
   <div class="dl-hint">Opens a clean, printable profile &mdash; save as PDF from your browser</div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-section">
+  <div class="newsletter-inner">
+    <div class="eyebrow" style="justify-content:center;margin-bottom:.8rem">Stay Informed</div>
+    <h3>Monthly ISP/ICT Insights</h3>
+    <p>Get one actionable insight about enterprise connectivity, cybersecurity, and Bangladesh's tech landscape — straight to your inbox. No spam, unsubscribe anytime.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+      <input class="newsletter-input" type="email" placeholder="your@company.com" required id="nl-email"/>
+      <button type="submit" class="newsletter-sub" id="nl-btn">Subscribe &#8594;</button>
+    </form>
+    <div class="newsletter-note">Join professionals across Bangladesh's ISP/ICT sector &middot; Free forever</div>
+    <br/>
+    <a href="https://whatsapp.com/channel/fahmidferdous" target="_blank" rel="noopener" class="wa-channel">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Follow on WhatsApp Channel
+    </a>
+  </div>
 </div>
 
 <footer>
@@ -1743,6 +1911,85 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 .qr-label{font-size:.68rem;font-weight:600;color:rgba(37,211,102,.8);letter-spacing:.08em;text-transform:uppercase;text-align:center}
 
 
+
+
+/* ── SUCCESS METRICS STRIP ── */
+.metrics-strip{background:linear-gradient(135deg,#0d1828,#112040);border-top:1px solid rgba(200,144,42,.2);border-bottom:1px solid rgba(200,144,42,.2);padding:2.5rem 5vw;overflow:hidden;position:relative}
+.metrics-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(200,144,42,.05) 0%,transparent 70%)}
+.metrics-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;position:relative;z-index:1}
+.metric-item{text-align:center;padding:.8rem}
+.metric-num{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#fff;line-height:1;margin-bottom:.4rem}
+.metric-num span{color:var(--gold)}
+.metric-label{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;line-height:1.4}
+.metric-divider{width:1px;background:rgba(255,255,255,.08);align-self:stretch;margin:auto 0}
+@media(max-width:900px){.metrics-inner{grid-template-columns:repeat(3,1fr)}.metric-divider{display:none}}
+@media(max-width:640px){.metrics-strip{padding:2rem 1.1rem}.metrics-inner{grid-template-columns:repeat(2,1fr);gap:1rem}}
+
+/* ── FAQ SECTION ── */
+.faq-section{background:var(--light);padding:6rem 5vw}
+.faq-section .si{max-width:1300px;margin:0 auto}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem}
+.faq-item{background:#fff;border:1px solid var(--border-l);border-radius:14px;overflow:hidden;transition:border-color .2s}
+.faq-item.faq-open{border-color:rgba(200,144,42,.3)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.5rem;cursor:pointer;gap:1rem;user-select:none}
+.faq-q-text{font-size:.9rem;font-weight:600;color:var(--ink);line-height:1.4}
+.faq-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border-l);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--muted);flex-shrink:0;transition:all .25s}
+.faq-open .faq-icon{background:var(--gold);border-color:var(--gold);color:#fff;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s}
+.faq-open .faq-a{max-height:200px;padding:0 1.5rem 1.2rem}
+.faq-a-text{font-size:.85rem;color:var(--muted);line-height:1.75;border-top:1px solid var(--border-l);padding-top:1rem}
+@media(max-width:820px){.faq-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.faq-section{padding:3.5rem 1.1rem}.faq-q{padding:1rem 1.2rem}.faq-q-text{font-size:.85rem}}
+
+/* ── COOKIE CONSENT ── */
+#cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:8000;background:rgba(8,15,28,.97);backdrop-filter:blur(16px);border-top:1px solid var(--border-d);padding:1rem 5vw;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s ease;box-shadow:0 -8px 32px rgba(0,0,0,.3)}
+#cookie-bar.show{transform:translateY(0)}
+.cookie-text{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.6;flex:1;min-width:200px}
+.cookie-text a{color:var(--gold);text-decoration:none}
+.cookie-btns{display:flex;gap:.6rem;flex-shrink:0}
+.cookie-btn{padding:.5rem 1.2rem;border-radius:100px;font-size:.75rem;font-weight:600;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:all .2s}
+.cookie-accept{background:var(--gold);color:#fff}
+.cookie-accept:hover{background:var(--gold2)}
+.cookie-decline{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid var(--border-d)}
+.cookie-decline:hover{background:rgba(255,255,255,.12)}
+@media(max-width:640px){#cookie-bar{bottom:68px;padding:.9rem 1.1rem}.cookie-btns{width:100%;justify-content:flex-end}}
+
+/* ── AVAILABILITY STATUS ── */
+.avail-badge{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:100px;padding:.4rem 1rem;margin-bottom:1.2rem}
+.avail-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pulse 1.8s infinite;flex-shrink:0}
+
+/* ── READING TIME ── */
+.read-time{font-size:.68rem;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:.3rem}
+.read-time svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* ── CONTACT TYPING MSG ── */
+#typing-msg{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.4rem;min-height:1.2rem;transition:opacity .3s;opacity:0}
+#typing-msg.show{opacity:1}
+
+/* ── RADAR CHART ── */
+.radar-wrap{display:flex;flex-direction:column;align-items:center;gap:1rem}
+#skillRadar{max-width:340px;width:100%}
+.radar-legend{display:flex;flex-wrap:wrap;gap:.4rem .8rem;justify-content:center}
+.radar-leg-item{font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.35rem}
+.radar-leg-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* ── NEWSLETTER ── */
+.newsletter-section{background:var(--dark2);border-top:1px solid var(--border-d);border-bottom:1px solid var(--border-d);padding:4rem 5vw}
+.newsletter-inner{max-width:600px;margin:0 auto;text-align:center}
+.newsletter-inner h3{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.newsletter-inner p{font-size:.88rem;color:rgba(255,255,255,.45);margin-bottom:1.8rem;line-height:1.7}
+.newsletter-form{display:flex;gap:.7rem;max-width:440px;margin:0 auto}
+.newsletter-input{flex:1;padding:.85rem 1.2rem;background:rgba(255,255,255,.06);border:1px solid var(--border-d);border-radius:100px;color:#fff;font-family:'Inter',sans-serif;font-size:.88rem;outline:none;transition:border-color .2s}
+.newsletter-input::placeholder{color:rgba(255,255,255,.3)}
+.newsletter-input:focus{border-color:var(--gold)}
+.newsletter-sub{padding:.85rem 1.6rem;background:var(--gold);color:#fff;border:none;border-radius:100px;font-size:.83rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:background .2s}
+.newsletter-sub:hover{background:var(--gold2)}
+.newsletter-note{font-size:.68rem;color:rgba(255,255,255,.25);margin-top:.9rem}
+@media(max-width:640px){.newsletter-section{padding:3rem 1.1rem}.newsletter-form{flex-direction:column;border-radius:14px}.newsletter-input,.newsletter-sub{border-radius:10px}}
+
+/* ── WHATSAPP CHANNEL ── */
+.wa-channel{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.3rem;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);border-radius:100px;text-decoration:none;color:#25d366;font-size:.8rem;font-weight:600;transition:all .2s;margin-top:.8rem}
+.wa-channel:hover{background:rgba(37,211,102,.18);transform:translateY(-2px)}
 
 /* ── GRADIENT HERO NAME ── */
 h1.hero-name{background:linear-gradient(135deg,#fff 0%,#f0e0c0 45%,#c8902a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -2188,6 +2435,101 @@ document.querySelectorAll('.nav-links a[href^="#"]').forEach(function(a){
     }
   });
 });
+</script>
+
+
+<!-- Cookie Consent -->
+<div id="cookie-bar">
+  <div class="cookie-text">🍪 This site uses cookies for analytics (Google Analytics) to understand how visitors interact with the portfolio. <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a></div>
+  <div class="cookie-btns">
+    <button class="cookie-btn cookie-decline" onclick="setCookie('declined')">Decline</button>
+    <button class="cookie-btn cookie-accept" onclick="setCookie('accepted')">Accept All</button>
+  </div>
+</div>
+
+
+<script>
+// Radar chart
+(function(){
+  var ctx = document.getElementById('skillRadar');
+  if(!ctx || typeof Chart === 'undefined') return;
+  new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: ['B2B Acquisition','Negotiation','Account Mgmt','Solution Design','Go-to-Market','Leadership','Revenue Growth','Data Analysis'],
+      datasets: [{
+        data: [95,90,92,88,85,85,88,80],
+        backgroundColor: 'rgba(200,144,42,0.15)',
+        borderColor: '#c8902a',
+        borderWidth: 2,
+        pointBackgroundColor: '#c8902a',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: '#c8902a',
+        pointRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      animation: {duration: 1500, easing: 'easeInOutQuart'},
+      scales: {
+        r: {
+          min: 60, max: 100,
+          ticks: {display: false, stepSize: 10},
+          grid: {color: 'rgba(0,0,0,0.06)'},
+          pointLabels: {font: {size: 10, family: "'Inter',sans-serif"}, color: '#6b7a8d'},
+          angleLines: {color: 'rgba(0,0,0,0.06)'}
+        }
+      },
+      plugins: {legend: {display: false}, tooltip: {callbacks: {label: function(c){return c.raw + '%'}}}}
+    }
+  });
+})();
+
+// FAQ toggle
+function toggleFaq(el){
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('faq-open');
+  document.querySelectorAll('.faq-item').forEach(function(f){ f.classList.remove('faq-open'); });
+  if(!isOpen) item.classList.add('faq-open');
+}
+
+// Cookie consent
+function setCookie(val){
+  localStorage.setItem('ff_cookie', val);
+  document.getElementById('cookie-bar').classList.remove('show');
+}
+(function(){
+  var c = localStorage.getItem('ff_cookie');
+  if(!c) setTimeout(function(){ var b=document.getElementById('cookie-bar'); if(b) b.classList.add('show'); }, 2000);
+})();
+
+// Typing response message
+var msgF = document.getElementById('msg-field');
+var typMsg = document.getElementById('typing-msg');
+if(msgF && typMsg){
+  msgF.addEventListener('input', function(){
+    typMsg.classList.toggle('show', this.value.length > 0);
+  });
+}
+
+// Newsletter
+function handleNewsletter(e){
+  e.preventDefault();
+  var btn = document.getElementById('nl-btn');
+  var email = document.getElementById('nl-email').value;
+  btn.textContent = 'Subscribed ✓';
+  btn.style.background = '#3d6b4a';
+  btn.disabled = true;
+  // TODO: Connect to Mailchimp/ConvertKit endpoint
+}
+
+// PWA service worker
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
+  });
+}
 </script>
 
 </body>
