@@ -627,7 +627,7 @@ footer strong{color:rgba(255,255,255,.6)}
 .cookie-accept:hover{background:var(--gold2)}
 .cookie-decline{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid var(--border-d)}
 .cookie-decline:hover{background:rgba(255,255,255,.12)}
-@media(max-width:640px){#cookie-bar{bottom:68px;padding:.9rem 1.1rem}.cookie-btns{width:100%;justify-content:flex-end}}
+@media(max-width:640px){#cookie-bar{bottom:68px;padding:.9rem 1.1rem;z-index:8001}.cookie-btns{width:100%;justify-content:flex-end}}
 
 /* ── AVAILABILITY STATUS ── */
 .avail-badge{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:100px;padding:.4rem 1rem;margin-bottom:1.2rem}
@@ -666,6 +666,15 @@ footer strong{color:rgba(255,255,255,.6)}
 .wa-channel{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.3rem;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);border-radius:100px;text-decoration:none;color:#25d366;font-size:.8rem;font-weight:600;transition:all .2s;margin-top:.8rem}
 .wa-channel:hover{background:rgba(37,211,102,.18);transform:translateY(-2px)}
 
+
+.radar-mob-bars{flex-direction:column;gap:.7rem;width:100%;padding:0 .5rem}
+.rmb-item{}.rmb-top{display:flex;justify-content:space-between;margin-bottom:.3rem}
+.rmb-label{font-size:.78rem;font-weight:500;color:var(--ink)}.rmb-pct{font-size:.72rem;font-weight:600;color:var(--gold)}
+.rmb-track{height:5px;background:rgba(0,0,0,.07);border-radius:100px;overflow:hidden}
+.rmb-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold2));border-radius:100px}
+@media(max-width:640px){.radar-mob-bars{display:flex !important}.radar-wrap canvas,.radar-legend{display:none !important}}
+@media(min-width:641px){.radar-mob-bars{display:none !important}}
+
 /* ── GRADIENT HERO NAME ── */
 h1.hero-name{background:linear-gradient(135deg,#fff 0%,#f0e0c0 45%,#c8902a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 h1.hero-name .line2{background:linear-gradient(135deg,#e8b44a,#c8902a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -702,6 +711,7 @@ h1.hero-name .line2{background:linear-gradient(135deg,#e8b44a,#c8902a);-webkit-b
 /* ── STICKY MOBILE DOCK ── */
 .mob-dock{display:none}
 @media(max-width:640px){
+  .wa-float{display:none !important}
   .mob-dock{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:490;background:rgba(8,15,28,.96);backdrop-filter:blur(20px);border-top:1px solid var(--border-d);padding:.55rem 0 calc(.55rem + env(safe-area-inset-bottom));justify-content:space-around;align-items:center}
   .mob-dock-btn{display:flex;flex-direction:column;align-items:center;gap:.22rem;text-decoration:none;padding:.35rem .9rem;border-radius:10px;transition:background .2s;flex:1}
   .mob-dock-btn:active{background:rgba(200,144,42,.12)}
@@ -873,7 +883,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
     <div class="hero-text">
       <div class="hero-greeting">Hello, I&#8217;m</div>
       <h1 class="hero-name">Fahmid<br/><span class="line2">Ferdous</span></h1>
-      <div class="current-badge"><span class="current-dot"></span>Currently expanding Cybersecurity &amp; EMS portfolio at BDCOM Online Ltd.</div>
+      <div class="current-badge"><span class="current-dot"></span>Currently: Onboarding enterprise clients in Cybersecurity &amp; VTS at BDCOM</div>
       <p class="hero-title">
         <span class="typewriter-wrap"><span class="typewriter-text" id="typewriter">Enterprise Business Growth Specialist</span></span> — driving B2B client acquisition, strategic partnerships, and customised solution development across Bangladesh&#8217;s ISP &amp; ICT sector.
       </p>
@@ -928,7 +938,9 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 
 <!-- SUCCESS METRICS -->
 <div class="metrics-strip">
-  <div class="metrics-inner">
+  
+<div style="text-align:center;margin-bottom:1.2rem;position:relative;z-index:1"><span style="font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,144,42,.7)">Delivering results that speak for themselves</span></div>
+<div class="metrics-inner">
     <div class="metric-item reveal"><div class="metric-num">99.8<span>%</span></div><div class="metric-label">Uptime Delivered</div></div>
     <div class="metric-divider"></div>
     <div class="metric-item reveal"><div class="metric-num">23<span>%</span></div><div class="metric-label">Avg. Cost Reduction</div></div>
@@ -1008,6 +1020,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
         <div class="hiw-badge">Free &middot; 30 min</div>
         <div class="hiw-title">Discovery Call</div>
         <div class="hiw-desc">We talk about your business, your challenges, and what you actually need — no pitch, no pressure.</div>
+        <a href="mailto:fahmidferdous@gmail.com?subject=Discovery Call Request&body=Hi Fahmid, I would like to schedule a free 30-minute discovery call." style="display:inline-flex;align-items:center;gap:.4rem;margin-top:.7rem;font-size:.72rem;font-weight:600;color:var(--gold);text-decoration:none">Book a call &#8594;</a>
       </div>
       <div class="hiw-step" style="transition-delay:.1s">
         <div class="hiw-num">02</div>
@@ -1065,6 +1078,16 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
         <div class="eyebrow" style="margin-bottom:1.2rem">Key Proficiencies</div>
       <div class="radar-wrap">
         <canvas id="skillRadar"></canvas>
+        <div class="radar-mob-bars">
+          <div class="rmb-item"><div class="rmb-top"><span class="rmb-label">B2B Acquisition</span><span class="rmb-pct">95%</span></div><div class="rmb-track"><div class="rmb-fill" style="width:95%"></div></div></div>
+          <div class="rmb-item"><div class="rmb-top"><span class="rmb-label">Negotiation</span><span class="rmb-pct">90%</span></div><div class="rmb-track"><div class="rmb-fill" style="width:90%"></div></div></div>
+          <div class="rmb-item"><div class="rmb-top"><span class="rmb-label">Account Management</span><span class="rmb-pct">92%</span></div><div class="rmb-track"><div class="rmb-fill" style="width:92%"></div></div></div>
+          <div class="rmb-item"><div class="rmb-top"><span class="rmb-label">Solution Design</span><span class="rmb-pct">88%</span></div><div class="rmb-track"><div class="rmb-fill" style="width:88%"></div></div></div>
+          <div class="rmb-item"><div class="rmb-top"><span class="rmb-label">Go-to-Market</span><span class="rmb-pct">85%</span></div><div class="rmb-track"><div class="rmb-fill" style="width:85%"></div></div></div>
+          <div class="rmb-item"><div class="rmb-top"><span class="rmb-label">Leadership</span><span class="rmb-pct">85%</span></div><div class="rmb-track"><div class="rmb-fill" style="width:85%"></div></div></div>
+          <div class="rmb-item"><div class="rmb-top"><span class="rmb-label">Revenue Growth</span><span class="rmb-pct">88%</span></div><div class="rmb-track"><div class="rmb-fill" style="width:88%"></div></div></div>
+          <div class="rmb-item"><div class="rmb-top"><span class="rmb-label">Data Analysis</span><span class="rmb-pct">80%</span></div><div class="rmb-track"><div class="rmb-fill" style="width:80%"></div></div></div>
+        </div>
         <div class="radar-legend">
           <div class="radar-leg-item"><span class="radar-leg-dot"></span>B2B Acquisition</div>
           <div class="radar-leg-item"><span class="radar-leg-dot"></span>Negotiation</div>
@@ -1330,7 +1353,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
     <div class="tl-grid">
 
       <div class="tl-card reveal">
-        <div class="tl-thumb" style="background:linear-gradient(135deg,#b87d2e,#e8b44a)"><span class="tl-thumb-icon">📡</span><span class="tl-thumb-label">ISP Industry</span></div>
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#1a0a00,#b87d2e)"><span class="tl-thumb-icon">📡</span><span class="tl-thumb-label">ISP Industry</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1352,7 +1375,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
-        <div class="tl-thumb" style="background:linear-gradient(135deg,#2563eb,#1d4ed8)"><span class="tl-thumb-icon">🌐</span><span class="tl-thumb-label">IoT & Tech</span></div>
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#001a2e,#b87d2e)"><span class="tl-thumb-icon">🌐</span><span class="tl-thumb-label">IoT & Tech</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1374,7 +1397,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
-        <div class="tl-thumb" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)"><span class="tl-thumb-icon">🤖</span><span class="tl-thumb-label">AI & Future</span></div>
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#1a0033,#b87d2e)"><span class="tl-thumb-icon">🤖</span><span class="tl-thumb-label">AI & Future</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1396,7 +1419,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
-        <div class="tl-thumb" style="background:linear-gradient(135deg,#059669,#065f46)"><span class="tl-thumb-icon">🔐</span><span class="tl-thumb-label">Cybersecurity</span></div>
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#001a12,#b87d2e)"><span class="tl-thumb-icon">🔐</span><span class="tl-thumb-label">Cybersecurity</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1418,7 +1441,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
-        <div class="tl-thumb" style="background:linear-gradient(135deg,#d97706,#b45309)"><span class="tl-thumb-icon">🤝</span><span class="tl-thumb-label">Client Relations</span></div>
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#2e1a00,#b87d2e)"><span class="tl-thumb-icon">🤝</span><span class="tl-thumb-label">Client Relations</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1440,7 +1463,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
-        <div class="tl-thumb" style="background:linear-gradient(135deg,#dc2626,#991b1b)"><span class="tl-thumb-icon">⚠️</span><span class="tl-thumb-label">Business Strategy</span></div>
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#2e0000,#b87d2e)"><span class="tl-thumb-icon">⚠️</span><span class="tl-thumb-label">Business Strategy</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1462,7 +1485,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       </div>
 
       <div class="tl-card reveal">
-        <div class="tl-thumb" style="background:linear-gradient(135deg,#0284c7,#0369a1)"><span class="tl-thumb-icon">📶</span><span class="tl-thumb-label">Telecom & Policy</span></div>
+        <div class="tl-thumb" style="background:linear-gradient(135deg,#001833,#b87d2e)"><span class="tl-thumb-icon">📶</span><span class="tl-thumb-label">Telecom & Policy</span></div>
         <div class="tl-card-top">
           <div>
             <span class="tl-source">
@@ -1513,7 +1536,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       <div class="story-card reveal tilt">
         <div class="story-head">
           <div class="story-num">Story 01</div>
-          <div class="story-sector">Government &amp; Utilities</div>
+          <div class="story-sector">Power &amp; Utilities · Dhaka</div>
           <div class="story-title">Winning a Power Authority That Hadn&#8217;t Changed Vendors in Six Years</div>
         </div>
         <div class="story-journey">
@@ -1551,7 +1574,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       <div class="story-card reveal tilt">
         <div class="story-head">
           <div class="story-num">Story 02</div>
-          <div class="story-sector">Multinational Corporate</div>
+          <div class="story-sector">Multinational Electronics · Bangladesh</div>
           <div class="story-title">How I Converted a &#8220;We&#8217;re Happy With What We Have&#8221; Into a Multi-Service Deal</div>
         </div>
         <div class="story-journey">
@@ -1589,7 +1612,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       <div class="story-card reveal tilt">
         <div class="story-head">
           <div class="story-num">Story 03</div>
-          <div class="story-sector">Manufacturing &amp; FMCG</div>
+          <div class="story-sector">Food Manufacturing · Dhaka</div>
           <div class="story-title">Rebuilding Trust With a Client Burned by Their Previous ISP</div>
         </div>
         <div class="story-journey">
@@ -1627,7 +1650,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       <div class="story-card reveal tilt">
         <div class="story-head">
           <div class="story-num">Story 04</div>
-          <div class="story-sector">Education &amp; NGO</div>
+          <div class="story-sector">Education &amp; Consultancy · Dhaka</div>
           <div class="story-title">Closing a Budget-Constrained Institution by Making the Numbers Work Differently</div>
         </div>
         <div class="story-journey">
@@ -1715,6 +1738,10 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
         </div>
         <div class="faq-a"><div class="faq-a-text">I listen before I pitch. My first meeting is always about understanding your business — not selling a product. I also stay involved post-deployment to ensure you're getting the performance promised, not just during the sales process.</div></div>
       </div>
+    </div>
+    <div style="text-align:center;margin-top:2rem" class="reveal">
+      <p style="font-size:.88rem;color:var(--muted);margin-bottom:.8rem">Don't see your question?</p>
+      <a href="mailto:fahmidferdous@gmail.com?subject=Question from Portfolio&body=Hi Fahmid, I have a question:" class="btn btn-primary" style="font-size:.82rem">Ask me directly &#8594;</a>
     </div>
   </div>
 </section>
@@ -1804,8 +1831,9 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       <button type="submit" class="newsletter-sub" id="nl-btn">Subscribe &#8594;</button>
     </form>
     <div class="newsletter-note">Join professionals across Bangladesh's ISP/ICT sector &middot; Free forever</div>
+    <div style="font-size:.68rem;color:rgba(200,144,42,.5);margin-top:.5rem">&#9888; Newsletter launching soon — your email will be first on the list</div>
     <br/>
-    <a href="https://whatsapp.com/channel/fahmidferdous" target="_blank" rel="noopener" class="wa-channel">
+    <a href="https://whatsapp.com/channel/fahmidferdous" style="display:none" target="_blank" rel="noopener" class="wa-channel">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Follow on WhatsApp Channel
     </a>
@@ -1952,7 +1980,7 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 .cookie-accept:hover{background:var(--gold2)}
 .cookie-decline{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid var(--border-d)}
 .cookie-decline:hover{background:rgba(255,255,255,.12)}
-@media(max-width:640px){#cookie-bar{bottom:68px;padding:.9rem 1.1rem}.cookie-btns{width:100%;justify-content:flex-end}}
+@media(max-width:640px){#cookie-bar{bottom:68px;padding:.9rem 1.1rem;z-index:8001}.cookie-btns{width:100%;justify-content:flex-end}}
 
 /* ── AVAILABILITY STATUS ── */
 .avail-badge{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);border-radius:100px;padding:.4rem 1rem;margin-bottom:1.2rem}
@@ -1991,6 +2019,15 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 .wa-channel{display:inline-flex;align-items:center;gap:.6rem;padding:.6rem 1.3rem;background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.2);border-radius:100px;text-decoration:none;color:#25d366;font-size:.8rem;font-weight:600;transition:all .2s;margin-top:.8rem}
 .wa-channel:hover{background:rgba(37,211,102,.18);transform:translateY(-2px)}
 
+
+.radar-mob-bars{flex-direction:column;gap:.7rem;width:100%;padding:0 .5rem}
+.rmb-item{}.rmb-top{display:flex;justify-content:space-between;margin-bottom:.3rem}
+.rmb-label{font-size:.78rem;font-weight:500;color:var(--ink)}.rmb-pct{font-size:.72rem;font-weight:600;color:var(--gold)}
+.rmb-track{height:5px;background:rgba(0,0,0,.07);border-radius:100px;overflow:hidden}
+.rmb-fill{height:100%;background:linear-gradient(to right,var(--gold),var(--gold2));border-radius:100px}
+@media(max-width:640px){.radar-mob-bars{display:flex !important}.radar-wrap canvas,.radar-legend{display:none !important}}
+@media(min-width:641px){.radar-mob-bars{display:none !important}}
+
 /* ── GRADIENT HERO NAME ── */
 h1.hero-name{background:linear-gradient(135deg,#fff 0%,#f0e0c0 45%,#c8902a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 h1.hero-name .line2{background:linear-gradient(135deg,#e8b44a,#c8902a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -2027,6 +2064,7 @@ h1.hero-name .line2{background:linear-gradient(135deg,#e8b44a,#c8902a);-webkit-b
 /* ── STICKY MOBILE DOCK ── */
 .mob-dock{display:none}
 @media(max-width:640px){
+  .wa-float{display:none !important}
   .mob-dock{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:490;background:rgba(8,15,28,.96);backdrop-filter:blur(20px);border-top:1px solid var(--border-d);padding:.55rem 0 calc(.55rem + env(safe-area-inset-bottom));justify-content:space-around;align-items:center}
   .mob-dock-btn{display:flex;flex-direction:column;align-items:center;gap:.22rem;text-decoration:none;padding:.35rem .9rem;border-radius:10px;transition:background .2s;flex:1}
   .mob-dock-btn:active{background:rgba(200,144,42,.12)}
@@ -2231,10 +2269,10 @@ window.addEventListener('scroll', function(){
 (function(){
   var phrases = [
     'Enterprise Business Growth Specialist',
-    'B2B Sales & Partnership Expert',
-    'ISP/ICT Solution Architect',
-    'Corporate Account Manager',
-    'Market Expansion Strategist'
+    'ISP/ICT Solutions Partner in Bangladesh',
+    'Cybersecurity & Smart Infrastructure Expert',
+    'B2B Sales & Strategic Partnership Builder',
+    'Your Enterprise Technology Advisor'
   ];
   var el = document.getElementById('typewriter');
   if(!el) return;
