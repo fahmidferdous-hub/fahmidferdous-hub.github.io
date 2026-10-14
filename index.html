@@ -178,6 +178,16 @@ body{font-family:'Inter',sans-serif;background:var(--light);color:var(--ink);ove
 .fg input:focus,.fg textarea:focus{border-color:var(--gold)}
 .fg textarea{min-height:90px}
 
+/* ─── BEYOND WORK ─── */
+.beyond-section{background:var(--dark);padding:5rem 5vw}
+.beyond-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1100px;margin:2.5rem auto 0}
+.beyond-card{background:rgba(255,255,255,.03);border:1px solid rgba(200,144,42,.15);border-radius:16px;padding:2rem;transition:border-color .3s,transform .3s}
+.beyond-card:hover{border-color:rgba(200,144,42,.4);transform:translateY(-4px)}
+.beyond-icon{font-size:2.2rem;margin-bottom:1rem;display:block}
+.beyond-title{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#fff;margin-bottom:.6rem}
+.beyond-text{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.7}
+@media(max-width:780px){.beyond-grid{grid-template-columns:1fr;gap:1.2rem}.beyond-section{padding:3.5rem 1.1rem}}
+
 /* ─── FOOTER ─── */
 footer{background:var(--dark);border-top:1px solid var(--border-d);padding:2rem 5vw;text-align:center;font-size:.78rem;color:rgba(255,255,255,.35)}
 footer a{color:var(--gold);text-decoration:none}
@@ -589,16 +599,12 @@ footer strong{color:rgba(255,255,255,.6)}
 
 
 /* ── SUCCESS METRICS STRIP ── */
-.metrics-strip{background:linear-gradient(135deg,#0d1828,#112040);border-top:1px solid rgba(200,144,42,.2);border-bottom:1px solid rgba(200,144,42,.2);padding:2.5rem 5vw;overflow:hidden;position:relative}
-.metrics-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(200,144,42,.05) 0%,transparent 70%)}
-.metrics-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;position:relative;z-index:1}
-.metric-item{text-align:center;padding:.8rem}
-.metric-num{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#fff;line-height:1;margin-bottom:.4rem}
-.metric-num span{color:var(--gold)}
-.metric-label{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.1em;line-height:1.4}
-.metric-divider{width:1px;background:rgba(255,255,255,.08);align-self:stretch;margin:auto 0}
-@media(max-width:900px){.metrics-inner{grid-template-columns:repeat(3,1fr)}.metric-divider{display:none}}
-@media(max-width:640px){.metrics-strip{padding:2rem 1.1rem}.metrics-inner{grid-template-columns:repeat(2,1fr);gap:1rem}}
+.tagline-strip{background:linear-gradient(135deg,#0d1828,#112040);border-top:1px solid rgba(200,144,42,.2);border-bottom:1px solid rgba(200,144,42,.2);padding:3rem 5vw;position:relative;overflow:hidden}
+.tagline-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(200,144,42,.05) 0%,transparent 70%)}
+.tagline-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.tagline-quote{font-family:'Syne',sans-serif;font-size:clamp(1.15rem,2.5vw,1.55rem);font-weight:600;color:#fff;line-height:1.55;margin-bottom:1rem;font-style:italic}
+.tagline-attr{font-size:.75rem;font-weight:500;color:rgba(200,144,42,.75);letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:640px){.tagline-strip{padding:2.2rem 1.1rem}.tagline-quote{font-size:1.05rem}}
 
 /* ── FAQ SECTION ── */
 .faq-section{background:var(--light);padding:6rem 5vw}
@@ -946,8 +952,8 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
       <div class="hero-greeting">Hello, I&#8217;m</div>
       <h1 class="hero-name">Fahmid<br/><span class="line2">Ferdous</span></h1>
       <div class="current-badge"><span class="current-dot"></span>Currently at BDCOM Online Ltd. &middot; Deputy Manager, Corporate Sales</div>
-      <p class="hero-title"><span class="typewriter-wrap"><span class="typewriter-text" id="typewriter">Enterprise Business Development Professional</span></span></p>
-      <p style="font-size:.95rem;color:rgba(255,255,255,.55);max-width:480px;line-height:1.8;margin-top:.8rem;margin-bottom:2rem">7 years. 5 companies. 300+ enterprises. This is my professional story — what I&#8217;ve built, who I&#8217;ve served, and what I can bring to your organisation.</p>
+      <p class="hero-title"><span class="typewriter-wrap"><span class="typewriter-text" id="typewriter">I sell internet. But really, I build trust.</span></span></p>
+      <p style="font-size:.95rem;color:rgba(255,255,255,.55);max-width:480px;line-height:1.8;margin-top:.8rem;margin-bottom:2rem">7 years. 5 companies. 300+ enterprises. I&#8217;ve spent my career helping Bangladeshi businesses get the connectivity and infrastructure they actually deserve &#8212; and staying around long after the contract is signed.</p>
       <div class="hero-btns">
         <a href="#journey" class="btn btn-primary">My Journey &#8594;</a>
         <a href="#connect" class="btn btn-outline">Let&#8217;s Connect</a>
@@ -1029,18 +1035,10 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 
 
 <!-- METRICS -->
-<div class="metrics-strip">
-  <div style="text-align:center;margin-bottom:1.2rem;position:relative;z-index:1"><span style="font-size:.68rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,144,42,.7)">Delivering results that speak for themselves</span></div>
-  <div class="metrics-inner">
-    <div class="metric-item reveal"><div class="metric-num">99.8<span>%</span></div><div class="metric-label">Deal Close Rate</div></div>
-    <div class="metric-divider"></div>
-    <div class="metric-item reveal"><div class="metric-num">23<span>%</span></div><div class="metric-label">Avg. Cost Reduction</div></div>
-    <div class="metric-divider"></div>
-    <div class="metric-item reveal"><div class="metric-num">4<span>x</span></div><div class="metric-label">Contract Growth</div></div>
-    <div class="metric-divider"></div>
-    <div class="metric-item reveal"><div class="metric-num">300<span>+</span></div><div class="metric-label">Enterprises Served</div></div>
-    <div class="metric-divider"></div>
-    <div class="metric-item reveal"><div class="metric-num">7<span>+</span></div><div class="metric-label">Years Experience</div></div>
+<div class="tagline-strip">
+  <div class="tagline-inner">
+    <div class="tagline-quote">&ldquo;I&#8217;ve spent 7 years convincing companies to trust me with their internet. Most of them still do.&rdquo;</div>
+    <div class="tagline-attr">— Fahmid Ferdous, Deputy Manager Corporate Sales, BDCOM Online Ltd.</div>
   </div>
 </div>
 
@@ -1646,6 +1644,35 @@ body.light-mode .hdr{background:linear-gradient(135deg,#1e3a5f,#2d5a96)}
 </section>
 
 
+<!-- BEYOND WORK -->
+<section class="beyond-section" id="beyond">
+  <div class="si">
+    <div class="reveal">
+      <div class="eyebrow" style="color:rgba(200,144,42,.8)">The person behind the sales calls</div>
+      <h2 class="section-h light">Beyond Work</h2>
+      <p style="color:rgba(255,255,255,.45);max-width:540px;line-height:1.8;margin-top:.8rem;font-size:.95rem">Sales is what I do. But here&#8217;s what actually shapes how I think.</p>
+    </div>
+    <div class="beyond-grid">
+      <div class="beyond-card reveal">
+        <span class="beyond-icon">⚽</span>
+        <div class="beyond-title">Football &amp; Sports Analytics</div>
+        <div class="beyond-text">I watch football through data. Expected goals, pressing intensity, positional heat maps — the same way I read a sales funnel. Patterns matter whether it&#8217;s on a pitch or in a pipeline.</div>
+      </div>
+      <div class="beyond-card reveal">
+        <span class="beyond-icon">🍹</span>
+        <div class="beyond-title">Casual Home Bartending</div>
+        <div class="beyond-text">I experiment with cocktails at home &#8212; not to impress anyone, just because getting the balance right is satisfying. Bad ratios ruin a drink the same way bad timing ruins a client pitch.</div>
+      </div>
+      <div class="beyond-card reveal">
+        <span class="beyond-icon">📊</span>
+        <div class="beyond-title">Personal Finance &amp; Planning</div>
+        <div class="beyond-text">I think a lot about long-term financial decisions &#8212; where money flows, what compounds, what doesn&#8217;t. It&#8217;s the same instinct I bring to building client accounts that grow year after year.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- CONTACT -->
 <section class="section contact-section" id="connect">
   <div class="section-inner">
@@ -2153,7 +2180,7 @@ if('serviceWorker' in navigator){
 // Global visibility fallback
 window.addEventListener('load',function(){
   setTimeout(function(){
-    document.querySelectorAll('.reveal,.exp-card,.journey-step,.metric-item,.svc-card,.tl-card,.story-card,.cert-card,.ind-item').forEach(function(el){
+    document.querySelectorAll('.reveal,.exp-card,.journey-step,.svc-card,.tl-card,.story-card,.cert-card,.ind-item,.beyond-card').forEach(function(el){
       el.classList.add('vis');
       el.style.opacity='1';
       el.style.transform='none';
